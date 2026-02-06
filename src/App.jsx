@@ -7,7 +7,6 @@ import {
   Mail,
   Zap,
   Car,
-  Settings,
   Menu,
   X,
   ExternalLink,
@@ -124,6 +123,7 @@ const App = () => {
                 <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest block italic">{event.category}</span>
                 <div className={`text-3xl font-black italic ${i === timelineData.length - 1 ? 'text-orange-500' : 'text-white'}`}>{event.year}</div>
                 <p className={`text-[10px] font-bold uppercase tracking-widest ${i === 0 || i === 2 ? 'text-cyan-400' : i === timelineData.length - 1 ? 'text-white' : 'text-slate-400'}`}>{event.title}</p>
+                {event.description && <p className="text-xs text-slate-500 font-light normal-case tracking-normal">{event.description}</p>}
               </div>
             ))}
           </div>
@@ -136,7 +136,7 @@ const App = () => {
             <h2 className="text-sm font-mono text-cyan-400 mb-6 tracking-[0.5em] uppercase italic">The Studio Philosophy</h2>
             <h3 className="text-4xl md:text-7xl font-black italic uppercase tracking-tighter leading-none mb-8">Thinking in Logic. <br /><span className="text-cyan-400">Building in Code.</span></h3>
             <p className="text-slate-400 text-xl font-light italic">
-              Wir sind ein Team von „Ghost Architects". Wir konzipieren nicht nur Blueprints – wir besitzen die Supplier-ID und implementieren die Lösungen selbst. Hands-on. Engine-level.
+              20+ Jahre DCC-Erfahrung, verdichtet in einem Studio. Von prozeduraler Asset-Erzeugung über Virtual Production bis Agentic DCC Pipelines – wir produzieren, was andere planen.
             </p>
           </div>
 
@@ -185,7 +185,7 @@ const App = () => {
                     <div className="absolute top-10 right-10 flex flex-col items-end gap-2">
                       <div className="flex items-center gap-2 px-5 py-2 bg-black/60 backdrop-blur-md border border-white/20 rounded-full text-[10px] font-black uppercase tracking-widest text-cyan-400 shadow-xl">
                         {caseStudy.case_id === 'ai-rust' ? <Bot size={12} /> : caseStudy.case_id === 'vw-streaming' ? <UserCheck size={12} /> : <Award size={12} />}
-                        {caseStudy.case_id === 'ai-rust' ? '2024 Implementation' : caseStudy.case_id === 'vw-streaming' ? 'VAG Partner ID' : 'NVIDIA Benchmark'}
+                        {caseStudy.case_id === 'ai-rust' ? 'Studio R&D' : caseStudy.case_id === 'vw-streaming' ? 'Enterprise Track Record' : 'NVIDIA Featured'}
                       </div>
                     </div>
 
@@ -227,44 +227,46 @@ const App = () => {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <div>
-              <h2 className="text-4xl md:text-7xl font-black mb-10 uppercase italic tracking-tighter leading-none text-white">The Neural <br /><span className="text-orange-500">Forge.</span></h2>
+              <h2 className="text-4xl md:text-7xl font-black mb-10 uppercase italic tracking-tighter leading-none text-white">Production <br /><span className="text-orange-500">Pipeline.</span></h2>
               <p className="text-slate-400 text-xl mb-12 font-light italic">
-                Wir schmieden Logik in Rust und C++. Unsere Plugins erweitern die Unreal Engine um intelligente Generatoren und autonome Agenten, die industrielle Workflows revolutionieren.
+                20+ Jahre DCC-Erfahrung in einer Pipeline. Von Blender und Unreal Engine über Motion Capture bis Pixel Streaming – alles, was Enterprise Content Production braucht.
               </p>
               <div className="grid grid-cols-2 gap-8">
                 <div className="space-y-2">
-                  <div className="text-xs font-black uppercase tracking-widest text-cyan-400 italic">// 2024 Core</div>
-                  <p className="text-slate-500 text-[10px] uppercase font-bold tracking-widest">Rust-Based Neural Backends</p>
+                  <div className="text-xs font-black uppercase tracking-widest text-cyan-400 italic">// DCC Stack</div>
+                  <p className="text-slate-500 text-[10px] uppercase font-bold tracking-widest">Blender · Unreal Engine · Houdini</p>
                 </div>
                 <div className="space-y-2">
-                  <div className="text-xs font-black uppercase tracking-widest text-cyan-400 italic">// Enterprise Stack</div>
-                  <p className="text-slate-500 text-[10px] uppercase font-bold tracking-widest">Global Pixel Streaming Clusters</p>
+                  <div className="text-xs font-black uppercase tracking-widest text-cyan-400 italic">// Production</div>
+                  <p className="text-slate-500 text-[10px] uppercase font-bold tracking-widest">Virtual Photography · Pixel Streaming</p>
                 </div>
               </div>
             </div>
 
             <div className="relative">
-              <div className="bg-slate-900/40 backdrop-blur-2xl border border-white/10 rounded-[3rem] p-10 font-mono text-xs overflow-hidden shadow-2xl relative">
-                <div className="absolute top-0 right-0 p-10 opacity-5 pointer-events-none">
-                  <Settings size={200} className="animate-spin-slow" />
-                </div>
+              <div className="bg-slate-900/40 backdrop-blur-2xl border border-white/10 rounded-[3rem] p-10 overflow-hidden shadow-2xl relative">
                 <div className="flex justify-between items-center mb-8 border-b border-white/10 pb-4">
-                  <span className="text-[10px] text-slate-500 uppercase font-bold tracking-widest italic">Synapticore_Kernel_2024.rs</span>
+                  <span className="text-[10px] text-slate-500 uppercase font-bold tracking-widest italic">Production_Pipeline</span>
                   <div className="flex gap-2">
                     <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></div>
                     <div className="w-2 h-2 rounded-full bg-orange-500/50"></div>
                   </div>
                 </div>
-                <div className="space-y-3 text-slate-300">
-                  <p className="text-orange-500 italic">// Rust Implementation for Autonomous Reasoning</p>
-                  <p><span className="text-purple-400">pub struct</span> <span className="text-blue-400">AgentCore</span> {'{'}</p>
-                  <p className="pl-6">logic: <span className="text-purple-400">Arc</span>&lt;<span className="text-purple-400">Mutex</span>&lt;NeuralState&gt;&gt;,</p>
-                  <p className="pl-6">performance: f32,</p>
-                  <p className="pl-4">{'}'}</p>
-                  <p><span className="text-purple-400">impl</span> <span className="text-blue-400">AgentCore</span> {'{'}</p>
-                  <p className="pl-6 text-slate-500">// Blueprint-to-Code transition logic</p>
-                  <p className="pl-6"><span className="text-purple-400">pub fn</span> <span className="text-blue-400">execute_sync</span>(&amp;<span className="text-purple-400">self</span>) {'{ ... }'}</p>
-                  <p className="pl-4">{'}'}</p>
+                <div className="space-y-6">
+                  {[
+                    { label: 'Asset Creation', tools: 'Blender · Houdini · Substance', color: 'text-cyan-400' },
+                    { label: 'Real-Time Engine', tools: 'Unreal Engine 5 · Virtual Production', color: 'text-blue-400' },
+                    { label: 'Delivery', tools: 'Pixel Streaming · Cloud Deploy', color: 'text-purple-400' },
+                    { label: 'Automation', tools: 'Agentic DCC · AI Workflows', color: 'text-orange-400' },
+                  ].map((step, i) => (
+                    <div key={i} className="flex items-center gap-4">
+                      <div className={`w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-xs font-black ${step.color}`}>{String(i + 1).padStart(2, '0')}</div>
+                      <div>
+                        <div className={`text-xs font-black uppercase tracking-widest ${step.color}`}>{step.label}</div>
+                        <div className="text-[10px] text-slate-500 font-mono tracking-wider">{step.tools}</div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -355,15 +357,13 @@ const App = () => {
       <footer className="py-20 border-t border-white/5 bg-black relative">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-12">
           <div className="flex flex-col gap-2">
-            <span className="text-[10px] font-mono uppercase tracking-[0.5em] text-slate-700 italic font-bold">Synapticore Studio // High-End Systems Architecture // Est. 2004</span>
+            <span className="text-[10px] font-mono uppercase tracking-[0.5em] text-slate-700 italic font-bold">Synapticore Studio // Björn Bethge – 20+ Jahre DCC</span>
             <div className="flex flex-wrap gap-8 opacity-20 grayscale items-center text-sm font-black italic tracking-tighter text-slate-400">
               <span>BLENDER 2.4 ORIGIN</span>
               <span>VW GROUP PARTNER ID</span>
-              <span>AUDI</span>
-              <span>SKODA</span>
-              <span>ADIDAS VR</span>
-              <span>NVIDIA SPOTLIGHT</span>
-              <span>RUST 2024 CORE</span>
+              <span>ADIDAS / NVIDIA</span>
+              <span>VIRTUAL PRODUCTION</span>
+              <span>AGENTIC DCC</span>
             </div>
           </div>
           <div className="flex gap-12 text-[10px] font-black uppercase tracking-[0.3em] text-slate-600">

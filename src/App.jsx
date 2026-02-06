@@ -46,10 +46,7 @@ import heroData from '@content/hero.json';
 import capabilitiesData from '@content/capabilities.json';
 import caseStudiesData from '@content/case-studies.json';
 import timelineData from '@content/timeline.json';
-import ecosystemData from '@shared/ecosystem.json';
-
 const capabilityIcons = { Brain, Cloud, Wand2 };
-const ecosystemIcons = { Cpu, FlaskConical: Dna, Layers };
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -61,12 +58,10 @@ const App = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const currentSiteId = 'synapticore-studio';
-
   return (
     <div className="min-h-screen bg-[#020202] text-white font-sans selection:bg-cyan-500/30">
       <nav className={`fixed w-full z-[100] transition-all duration-500 ${scrolled ? 'bg-black/95 backdrop-blur-xl border-b border-white/10 py-4 shadow-2xl' : 'bg-transparent py-8'}`}>
-        <div className="container mx-auto px-6 flex justify-between items-center">
+        <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
           <div className="flex items-center gap-4 group cursor-pointer">
             <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-600 text-white rounded-lg flex items-center justify-center group-hover:rotate-180 transition-transform duration-700 shadow-[0_0_20px_rgba(34,211,238,0.3)]">
               <Dna size={22} />
@@ -88,6 +83,17 @@ const App = () => {
             {isMenuOpen ? <X /> : <Menu />}
           </button>
         </div>
+
+        {isMenuOpen && (
+          <div className="md:hidden bg-black/95 backdrop-blur-xl border-t border-white/10">
+            <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
+              <a href="#lab" onClick={() => setIsMenuOpen(false)} className="text-sm font-bold uppercase tracking-widest text-white hover:text-cyan-400 transition-colors py-2">The Lab</a>
+              <a href="#projects" onClick={() => setIsMenuOpen(false)} className="text-sm font-bold uppercase tracking-widest text-white hover:text-cyan-400 transition-colors py-2">Cases</a>
+              <a href="#heritage" onClick={() => setIsMenuOpen(false)} className="text-sm font-bold uppercase tracking-widest text-white hover:text-cyan-400 transition-colors py-2">Timeline</a>
+              <a href="#contact" onClick={() => setIsMenuOpen(false)} className="px-6 py-3 border border-cyan-400 text-cyan-400 rounded-full hover:bg-cyan-400 hover:text-black transition-all font-bold tracking-widest text-xs text-center mt-2">Collaborate</a>
+            </div>
+          </div>
+        )}
       </nav>
 
       <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
@@ -96,18 +102,18 @@ const App = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1400px] h-[900px] bg-blue-600/5 rounded-full blur-[180px]"></div>
         </div>
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="max-w-6xl">
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-cyan-400 text-[10px] font-bold tracking-[0.3em] uppercase mb-8">
               <CircuitBoard size={14} className="text-cyan-400 animate-pulse" /> {heroData.features[0]}
             </div>
-            <h1 className="text-6xl md:text-8xl lg:text-[11rem] font-black leading-[0.8] mb-10 tracking-tighter italic uppercase">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-[11rem] font-black leading-[0.8] mb-10 tracking-tighter italic uppercase">
               {heroData.title.split('\n')[0]} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-400 to-blue-800">{heroData.title.split('\n')[1]}</span>
             </h1>
-            <p className="text-xl md:text-3xl text-slate-400 max-w-4xl leading-tight mb-14 font-light italic" dangerouslySetInnerHTML={{ __html: heroData.description }} />
+            <p className="text-lg sm:text-xl md:text-3xl text-slate-400 max-w-4xl leading-tight mb-8 md:mb-14 font-light italic" dangerouslySetInnerHTML={{ __html: heroData.description }} />
             <div className="flex flex-wrap gap-4">
-              <a href="#projects" className="px-12 py-6 bg-white text-black font-black rounded-full hover:bg-cyan-400 transition-all flex items-center gap-3 text-lg group shadow-2xl">
+              <a href="#projects" className="px-8 py-4 sm:px-12 sm:py-6 bg-white text-black font-black rounded-full hover:bg-cyan-400 transition-all flex items-center gap-3 text-base sm:text-lg group shadow-2xl">
                 {heroData.cta_text} <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
@@ -115,8 +121,8 @@ const App = () => {
         </div>
       </section>
 
-      <section id="heritage" className="py-24 border-y border-white/5 bg-[#030303]">
-        <div className="container mx-auto px-6">
+      <section id="heritage" className="py-12 md:py-24 border-y border-white/5 bg-[#030303]">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:text-left">
             {timelineData.map((event, i) => (
               <div key={i} className="space-y-2">
@@ -130,9 +136,9 @@ const App = () => {
         </div>
       </section>
 
-      <section id="lab" className="py-32 relative overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="max-w-3xl mb-24">
+      <section id="lab" className="py-16 md:py-32 relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-3xl mb-12 md:mb-24">
             <h2 className="text-sm font-mono text-cyan-400 mb-6 tracking-[0.5em] uppercase italic">The Studio Philosophy</h2>
             <h3 className="text-4xl md:text-7xl font-black italic uppercase tracking-tighter leading-none mb-8">Thinking in Logic. <br /><span className="text-cyan-400">Building in Code.</span></h3>
             <p className="text-slate-400 text-xl font-light italic">
@@ -144,7 +150,7 @@ const App = () => {
             {capabilitiesData.map((cap, i) => {
               const IconComponent = capabilityIcons[cap.icon];
               return (
-                <div key={i} className="p-10 border border-white/5 bg-gradient-to-b from-white/[0.02] to-transparent rounded-[3rem] hover:border-cyan-500/30 transition-all group">
+                <div key={i} className="p-6 sm:p-10 border border-white/5 bg-gradient-to-b from-white/[0.02] to-transparent rounded-2xl sm:rounded-[3rem] hover:border-cyan-500/30 transition-all group">
                   <div className="w-14 h-14 rounded-2xl bg-cyan-400/10 flex items-center justify-center mb-8 group-hover:bg-cyan-400 group-hover:text-black transition-all">
                     {IconComponent && <IconComponent className="text-cyan-400" />}
                   </div>
@@ -157,9 +163,9 @@ const App = () => {
         </div>
       </section>
 
-      <section id="projects" className="py-32 bg-[#050505] relative">
-        <div className="container mx-auto px-6">
-          <div className="mb-32 flex flex-col md:flex-row md:items-end justify-between gap-8">
+      <section id="projects" className="py-16 md:py-32 bg-[#050505] relative">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="mb-12 md:mb-32 flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div>
               <h2 className="text-sm font-mono text-cyan-400 mb-4 tracking-[0.4em] uppercase italic">The Archives</h2>
               <h3 className="text-4xl md:text-[6rem] font-black uppercase tracking-tighter italic leading-none">Global <br />Showcases.</h3>
@@ -169,11 +175,11 @@ const App = () => {
             </div>
           </div>
 
-          <div className="space-y-48">
+          <div className="space-y-16 md:space-y-48">
             {caseStudiesData.map((caseStudy, idx) => (
-              <div key={caseStudy.case_id} className={`grid lg:grid-cols-12 gap-16 items-center ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
+              <div key={caseStudy.case_id} className={`grid lg:grid-cols-12 gap-8 lg:gap-16 items-center ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
                 <div className="lg:col-span-7">
-                  <div className="group relative overflow-hidden rounded-[4rem] border border-white/10 bg-slate-900 shadow-2xl aspect-video">
+                  <div className="group relative overflow-hidden rounded-2xl md:rounded-[4rem] border border-white/10 bg-slate-900 shadow-2xl aspect-video">
                     <div className="absolute inset-0 bg-[#0a0a0a] flex items-center justify-center">
                       <div className="text-center opacity-10 group-hover:opacity-20 transition-opacity">
                         <Box size={160} className="mx-auto mb-4" />
@@ -182,14 +188,14 @@ const App = () => {
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-transparent to-transparent"></div>
 
-                    <div className="absolute top-10 right-10 flex flex-col items-end gap-2">
+                    <div className="absolute top-4 right-4 sm:top-10 sm:right-10 flex flex-col items-end gap-2">
                       <div className="flex items-center gap-2 px-5 py-2 bg-black/60 backdrop-blur-md border border-white/20 rounded-full text-[10px] font-black uppercase tracking-widest text-cyan-400 shadow-xl">
                         {caseStudy.case_id === 'ai-rust' ? <Bot size={12} /> : caseStudy.case_id === 'vw-streaming' ? <UserCheck size={12} /> : <Award size={12} />}
                         {caseStudy.case_id === 'ai-rust' ? 'Studio R&D' : caseStudy.case_id === 'vw-streaming' ? 'Enterprise Track Record' : 'NVIDIA Featured'}
                       </div>
                     </div>
 
-                    <div className="absolute bottom-12 left-12 right-12 flex flex-wrap gap-12">
+                    <div className="absolute bottom-4 left-4 right-4 sm:bottom-12 sm:left-12 sm:right-12 flex flex-wrap gap-4 sm:gap-12">
                       {caseStudy.stats.map((stat, i) => (
                         <div key={i} className="flex flex-col border-l border-white/20 pl-4">
                           <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest mb-1">Studio_Metric</span>
@@ -223,9 +229,9 @@ const App = () => {
         </div>
       </section>
 
-      <section className="py-32 border-y border-white/5 bg-[#010101] relative overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-24 items-center">
+      <section className="py-16 md:py-32 border-y border-white/5 bg-[#010101] relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-12 md:gap-24 items-center">
             <div>
               <h2 className="text-4xl md:text-7xl font-black mb-10 uppercase italic tracking-tighter leading-none text-white">Production <br /><span className="text-orange-500">Pipeline.</span></h2>
               <p className="text-slate-400 text-xl mb-12 font-light italic">
@@ -244,7 +250,7 @@ const App = () => {
             </div>
 
             <div className="relative">
-              <div className="bg-slate-900/40 backdrop-blur-2xl border border-white/10 rounded-[3rem] p-10 overflow-hidden shadow-2xl relative">
+              <div className="bg-slate-900/40 backdrop-blur-2xl border border-white/10 rounded-2xl sm:rounded-[3rem] p-6 sm:p-10 overflow-hidden shadow-2xl relative">
                 <div className="flex justify-between items-center mb-8 border-b border-white/10 pb-4">
                   <span className="text-[10px] text-slate-500 uppercase font-bold tracking-widest italic">Production_Pipeline</span>
                   <div className="flex gap-2">
@@ -274,75 +280,17 @@ const App = () => {
         </div>
       </section>
 
-      <section className="py-32 relative overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="mb-24">
-            <h2 className="text-sm font-mono text-cyan-400 mb-6 tracking-[0.5em] uppercase italic">The Ecosystem</h2>
-            <h3 className="text-4xl md:text-7xl font-black italic uppercase tracking-tighter leading-none mb-8">One Vision. <br /><span className="text-orange-500">Three Engines.</span></h3>
-            <p className="text-slate-400 text-xl font-light italic max-w-3xl">
-              Synapticore.studio ist der Product Owner – wir definieren, was gebaut wird. Das Lab liefert die Forschung, Dev die agentic Systems. Zusammen: von der Idee zur Weltklasse-Produktion.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8 mb-16">
-            {ecosystemData.map((org, i) => {
-              const isActive = org.org_id === currentSiteId;
-              const IconComponent = ecosystemIcons[org.icon];
-              return (
-                <div key={i} className={`p-10 border rounded-[3rem] transition-all group ${
-                  isActive
-                    ? 'border-cyan-500/30 bg-gradient-to-b from-cyan-500/5 to-transparent shadow-[0_0_60px_rgba(34,211,238,0.05)]'
-                    : 'border-white/5 bg-gradient-to-b from-white/[0.02] to-transparent hover:border-white/20'
-                }`}>
-                  {isActive && (
-                    <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-cyan-400 mb-6">
-                      <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" /> Active Studio
-                    </div>
-                  )}
-                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 transition-all ${
-                    isActive ? 'bg-cyan-400/10' : 'bg-white/5'
-                  } group-hover:bg-cyan-400 group-hover:text-black`}>
-                    {IconComponent && <IconComponent className={isActive || org.org_id === 'synapticore-io' ? 'text-cyan-400' : 'text-orange-400'} />}
-                  </div>
-                  <div className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 mb-2 italic">{org.role}</div>
-                  <h4 className="text-2xl font-black mb-4 uppercase italic tracking-tighter">{org.name.toUpperCase()}</h4>
-                  <p className="text-slate-500 leading-relaxed text-sm mb-6">{org.description}</p>
-                  {!isActive && org.href && (
-                    <a href={org.href} target="_blank" rel="noopener noreferrer" className="group/link flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 hover:text-cyan-400 transition-all">
-                      Explore <ChevronRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
-                    </a>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 py-8 bg-white/[0.02] border border-white/5 rounded-full">
-            <div className="flex items-center gap-4">
-              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-cyan-400 italic">Lab</span>
-              <span className="text-[10px] text-slate-600 italic">forscht</span>
-              <ChevronRight size={14} className="text-slate-700" />
-              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-orange-400 italic">Dev</span>
-              <span className="text-[10px] text-slate-600 italic">baut</span>
-              <ChevronRight size={14} className="text-slate-700" />
-              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white italic">Studio</span>
-              <span className="text-[10px] text-slate-600 italic">produziert</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" className="py-40 relative">
-        <div className="container mx-auto px-6 text-center">
+      <section id="contact" className="py-16 md:py-40 relative">
+        <div className="container mx-auto px-4 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-6xl md:text-[10rem] font-black uppercase tracking-tighter italic mb-14 leading-[0.85]">
+            <h2 className="text-4xl sm:text-6xl md:text-[10rem] font-black uppercase tracking-tighter italic mb-8 md:mb-14 leading-[0.85]">
               Forge <br /><span className="text-cyan-400 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 font-black">The Future.</span>
             </h2>
             <p className="text-slate-400 text-2xl md:text-3xl mb-16 font-light italic">
               Bereit für die Architektur der nächsten Generation? Kontaktieren Sie das Lead-Studio hinter 20 Jahren DCC-, Cloud- & AI-Exzellenz.
             </p>
             <div className="flex flex-col md:flex-row justify-center items-center gap-10">
-              <a href="mailto:core@synapticore.studio" className="group px-16 py-8 bg-white text-black font-black rounded-full hover:bg-cyan-400 transition-all text-2xl shadow-2xl active:scale-95 flex items-center gap-4">
+              <a href="mailto:core@synapticore.studio" className="group px-8 py-4 sm:px-16 sm:py-8 bg-white text-black font-black rounded-full hover:bg-cyan-400 transition-all text-lg sm:text-2xl shadow-2xl active:scale-95 flex items-center gap-4">
                 CONSULT STUDIO <Mail size={24} className="group-hover:rotate-12 transition-transform" />
               </a>
               <div className="flex items-center gap-4 text-xs font-mono uppercase tracking-[0.3em] text-slate-500">
@@ -354,11 +302,11 @@ const App = () => {
         </div>
       </section>
 
-      <footer className="py-20 border-t border-white/5 bg-black relative">
-        <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-12">
+      <footer className="py-10 md:py-20 border-t border-white/5 bg-black relative">
+        <div className="container mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-12">
           <div className="flex flex-col gap-2">
             <span className="text-[10px] font-mono uppercase tracking-[0.5em] text-slate-700 italic font-bold">Synapticore Studio // Björn Bethge – 20+ Jahre DCC</span>
-            <div className="flex flex-wrap gap-8 opacity-20 grayscale items-center text-sm font-black italic tracking-tighter text-slate-400">
+            <div className="flex flex-wrap gap-4 sm:gap-8 opacity-20 grayscale items-center text-sm font-black italic tracking-tighter text-slate-400">
               <span>BLENDER 2.4 ORIGIN</span>
               <span>VW GROUP PARTNER ID</span>
               <span>ADIDAS / NVIDIA</span>

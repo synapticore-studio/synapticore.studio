@@ -239,57 +239,6 @@ const App = () => {
         </div>
       </section>
 
-      <section className="py-16 md:py-32 border-y border-white/5 bg-[#010101] relative overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-12 md:gap-24 items-center">
-            <div>
-              <h2 className="text-4xl md:text-7xl font-black mb-10 uppercase italic tracking-tighter leading-none text-white">Production <br /><span className="text-orange-500">Pipeline.</span></h2>
-              <p className="text-slate-400 text-xl mb-12 font-light italic">
-                20+ Jahre DCC-Erfahrung in einer Pipeline. Von Blender und Unreal Engine über Motion Capture bis Pixel Streaming – alles, was Enterprise Content Production braucht.
-              </p>
-              <div className="grid grid-cols-2 gap-8">
-                <div className="space-y-2">
-                  <div className="text-xs font-black uppercase tracking-widest text-cyan-400 italic">// DCC Stack</div>
-                  <p className="text-slate-500 text-[10px] uppercase font-bold tracking-widest">Blender · Unreal Engine · Houdini</p>
-                </div>
-                <div className="space-y-2">
-                  <div className="text-xs font-black uppercase tracking-widest text-cyan-400 italic">// Production</div>
-                  <p className="text-slate-500 text-[10px] uppercase font-bold tracking-widest">Virtual Photography · Pixel Streaming</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="bg-slate-900/40 backdrop-blur-2xl border border-white/10 rounded-2xl sm:rounded-[3rem] p-6 sm:p-10 overflow-hidden shadow-2xl relative">
-                <div className="flex justify-between items-center mb-8 border-b border-white/10 pb-4">
-                  <span className="text-[10px] text-slate-500 uppercase font-bold tracking-widest italic">Production_Pipeline</span>
-                  <div className="flex gap-2">
-                    <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></div>
-                    <div className="w-2 h-2 rounded-full bg-orange-500/50"></div>
-                  </div>
-                </div>
-                <div className="space-y-6">
-                  {[
-                    { label: 'Asset Creation', tools: 'Blender · Houdini · Substance', color: 'text-cyan-400' },
-                    { label: 'Real-Time Engine', tools: 'Unreal Engine 5 · Virtual Production', color: 'text-blue-400' },
-                    { label: 'Delivery', tools: 'Pixel Streaming · Cloud Deploy', color: 'text-purple-400' },
-                    { label: 'Automation', tools: 'Agentic DCC · AI Workflows', color: 'text-orange-400' },
-                  ].map((step, i) => (
-                    <div key={i} className="flex items-center gap-4">
-                      <div className={`w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-xs font-black ${step.color}`}>{String(i + 1).padStart(2, '0')}</div>
-                      <div>
-                        <div className={`text-xs font-black uppercase tracking-widest ${step.color}`}>{step.label}</div>
-                        <div className="text-[10px] text-slate-500 font-mono tracking-wider">{step.tools}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section id="contact" className="py-16 md:py-40 relative">
         <div className="container mx-auto px-4 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">

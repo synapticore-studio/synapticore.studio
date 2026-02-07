@@ -160,6 +160,16 @@ const App = () => {
               );
             })}
           </div>
+          <div className="mt-12 md:mt-16 text-center">
+            <a
+              href="https://github.com/orgs/synapticore-studio/repositories?type=public"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-slate-500 hover:text-cyan-400 transition-all italic"
+            >
+              Open Source Repositories <ExternalLink size={12} />
+            </a>
+          </div>
         </div>
       </section>
 

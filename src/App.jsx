@@ -229,9 +229,6 @@ const App = () => {
                     ))}
                   </div>
 
-                  <button className="group flex items-center gap-4 text-xs font-black uppercase tracking-[0.3em] text-white hover:text-cyan-400 transition-all">
-                    View System Blueprint <ChevronRight size={18} className="group-hover:translate-x-2 transition-transform" />
-                  </button>
                 </div>
               </div>
             ))}

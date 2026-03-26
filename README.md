@@ -1,5 +1,7 @@
 # synapticore.studio
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N71WOHZ3)
+
 **Agentic DCC Pipelines & Interactive AI Experiences**
 
 [\![Live](https://img.shields.io/badge/synapticore.studio-live-blue?style=flat-square)](https://synapticore.studio)
@@ -22,4 +24,3 @@ npm run preview  # Preview build on port 4173
 ## License
 
 [MIT Ethical Use](LICENSE)
-

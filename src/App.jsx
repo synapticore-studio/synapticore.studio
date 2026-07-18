@@ -41,6 +41,9 @@ import {
   Blocks,
   Dna
 } from 'lucide-react';
+import { getEmail, mailtoLink } from './utils/email';
+
+const EMAIL_DOMAIN = 'synapticore.studio';
 
 import heroData from '@content/hero.json';
 import capabilitiesData from '@content/capabilities.json';
@@ -246,11 +249,11 @@ const App = () => {
               Bereit für die Architektur der nächsten Generation? Kontaktieren Sie das Lead-Studio hinter 20 Jahren DCC-, Cloud- & AI-Exzellenz.
             </p>
             <div className="flex flex-col md:flex-row justify-center items-center gap-10">
-              <a href="mailto:hello@synapticore.studio" className="group px-8 py-4 sm:px-16 sm:py-8 bg-white text-black font-black rounded-full hover:bg-cyan-400 transition-all text-lg sm:text-2xl shadow-2xl active:scale-95 flex items-center gap-4">
+              <a href={mailtoLink(EMAIL_DOMAIN)} className="group px-8 py-4 sm:px-16 sm:py-8 bg-white text-black font-black rounded-full hover:bg-cyan-400 transition-all text-lg sm:text-2xl shadow-2xl active:scale-95 flex items-center gap-4">
                 CONSULT STUDIO <Mail size={24} className="group-hover:rotate-12 transition-transform" />
               </a>
               <div className="flex flex-col items-center gap-4 mt-4">
-                <span className="text-sm font-mono text-slate-500">hello@synapticore.studio</span>
+                <span className="text-sm font-mono text-slate-500">{getEmail(EMAIL_DOMAIN)}</span>
                 <a href="https://www.linkedin.com/in/bj%C3%B6rn-bethge-a0754a329" target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase tracking-[0.2em] text-slate-600 hover:text-cyan-400 transition-colors">
                   LinkedIn
                 </a>
@@ -273,7 +276,7 @@ const App = () => {
             </div>
           </div>
           <div className="flex flex-wrap justify-center gap-8 md:gap-12 text-[10px] font-black uppercase tracking-[0.3em] text-slate-600">
-            <a href="mailto:hello@synapticore.studio" className="hover:text-cyan-400 transition-colors">Kontakt</a>
+            <a href={mailtoLink(EMAIL_DOMAIN)} className="hover:text-cyan-400 transition-colors">Kontakt</a>
             <a href="https://www.linkedin.com/in/bj%C3%B6rn-bethge-a0754a329" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">LinkedIn</a>
             <a href="/impressum.html" className="hover:text-cyan-400 transition-colors">Impressum</a>
             <a href="/impressum.html#datenschutz" className="hover:text-cyan-400 transition-colors">Datenschutz</a>

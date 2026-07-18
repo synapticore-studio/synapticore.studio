@@ -7,13 +7,42 @@
     <link rel="canonical" href="https://synapticore.studio/world/" />
     <meta name="description" content="Zwanzig Jahre DCC in fünf Räumen – von Blender 2.4 bis Agentic Pipelines. Scrollen Sie hindurch." />
     <style>
-      :root {
+      /* Die Engine setzt ihre Defaults als .sw-root{...} in @layer sw. Layer
+         entscheiden nur zwischen Regeln auf DEMSELBEN Element — eine Deklaration
+         auf .sw-root schlaegt also jeden von :root geerbten Wert. Deshalb muessen
+         die Tokens hier auf #world sitzen, nicht auf :root. */
+      #world {
         --sw-bg: #020202;
         --sw-ink: #f4f4f5;
         --sw-ink-soft: #a1a1aa;
         --sw-accent: #f97316;
       }
-      html, body { margin: 0; background: var(--sw-bg); }
+      html, body { margin: 0; background: #020202; }
+
+      /* Die Engine ist fuer helle Themes gebaut: sie kodiert #fff als
+         Oberflaechenfarbe hart und nutzt --sw-ink als Button-Hintergrund
+         (dunkle Tinte = dunkler Button). Auf dunklem Grund kippt beides in
+         hell-auf-hell. Diese Regeln liegen ausserhalb von @layer sw und
+         schlagen die Defaults daher unabhaengig von der Spezifitaet. */
+      #world .sw-nav {
+        background: color-mix(in srgb, var(--sw-ink) 8%, transparent);
+        border-color: color-mix(in srgb, var(--sw-ink) 14%, transparent);
+      }
+      #world .sw-topcta,
+      #world .sw-btn--primary {
+        color: var(--sw-bg);
+        background: var(--sw-ink);
+      }
+      #world .sw-copy__tags li {
+        color: color-mix(in srgb, var(--sw-accent) 80%, var(--sw-ink));
+        background: color-mix(in srgb, var(--sw-accent) 12%, transparent);
+      }
+      #world .sw-route__label {
+        color: var(--sw-ink);
+        background: color-mix(in srgb, var(--sw-bg) 85%, transparent);
+      }
+      /* Weisser Radial-Glow, gedacht als Lichtstimmung auf hellem Papier. */
+      #world .sw-sky__glow { opacity: .3; }
     </style>
   </head>
   <body>

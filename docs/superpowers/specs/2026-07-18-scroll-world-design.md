@@ -201,9 +201,20 @@ Grobe Schätzung bei 1080p/crf20/8s: 2–4 MB pro Clip, also 25–35 MB Desktop.
 keine gemessene Zahl** — sie hängt stark vom Bildinhalt ab, und dunkle Dioramen mit
 ruhiger Kamera komprimieren deutlich besser. Messung in Phase A.
 
+**Messung 2026-07-18, synthetischer `testsrc2`-Master:** Desktop **65 MB** (9 Clips,
+8,7 MB je Dive / 5,4 MB je Connector), Mobile 7,5 MB, Stills 1,3 MB. Das liegt fast beim
+Doppelten der Schätzung — aber `testsrc2` ist hochfrequentes Farbrauschen und damit der
+ungünstigste denkbare H.264-Input. Der Wert ist eine **Obergrenze, keine Prognose** für
+die gerenderten Dioramen. Die belastbare Messung ist die aus Task 9/10.
+
 Wenn das Ergebnis zu schwer ausfällt, in dieser Reihenfolge: `crf` anheben (20 → 23),
 Clips kürzen, Auflösung senken, Szenenzahl reduzieren. Die Szenenzahl zuletzt, weil sie
 die Erzählung beschneidet.
+
+Sollte auch der finale Render deutlich über ~40 MB liegen, ist der Ansatz selbst zu
+hinterfragen: Echtzeit-3D (Three.js/WebGPU) statt vorgerenderter Clips würde das
+Gewichtsproblem strukturell lösen, zum Preis von GPU-Last beim Besucher und deutlich mehr
+Implementierungsarbeit. Nicht Teil dieses Spec — als Plan B notiert.
 
 **Lazy-Loading mildert nur den Start**, nicht das Gesamtgewicht — geladen wird bei 1.6
 Viewport-Höhen Abstand (`scrub-engine.js:230`); wer durchscrollt, lädt alles.
@@ -214,6 +225,19 @@ nicht im Repo mitschleppen, Phase-A-Greybox-Assets vor Phase B entfernen.
 
 **`prefers-reduced-motion` lädt keine Clips** (`scrub-engine.js:201`) — es bleiben die
 Stills mit Crossfade. Die Stills müssen deshalb für sich stehen können.
+*Verifiziert 2026-07-18:* bei aktivem `reduce` und vollständigem Durchscrollen null
+Video-Requests, null `<video>`-Elemente, alle 9 Stills vorhanden, Partikel deaktiviert.
+
+**Fehlende Clips brechen die Seite nicht.** Verifiziert für beide Fälle: echter 404
+(Element wird gar nicht erzeugt, `r.ok` false → catch) und HTTP 200 mit falschem Body
+(totes `<video>` ohne Metadaten, kosmetisch). In beiden Fällen läuft der Scroll bis ans
+Ende durch und der CTA steht.
+
+**Testfallstrick:** Weder der Vite-Dev- noch der Preview-Server liefert für eine fehlende
+Datei unter `public/` einen 404 — der Dev-Server cached das Verzeichnis im Speicher, der
+Preview-Server greift auf den SPA-Fallback zurück und antwortet mit `index.html` und
+Status 200. Wer Fehlerfälle lokal testen will, muss die Response abfangen
+(`page.route(...)`), sonst testet er nichts.
 
 **iOS** braucht eine User-Geste, bevor ein stummes Video zuverlässig dekodiert; die Engine
 behandelt das (`primeVideo`, `scrub-engine.js:296`). Auf echtem Gerät zu verifizieren,

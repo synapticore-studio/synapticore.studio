@@ -3,3 +3,9 @@ dist/
 .env
 *.log
 .DS_Store
+
+# Scroll-World Assets: Zwischenstaende gehoeren nicht ins Repo.
+# Task 10 entscheidet, was von den finalen Renders eingecheckt wird.
+.work/
+public/world/vid/
+public/world/still/

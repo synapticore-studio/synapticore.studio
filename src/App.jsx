@@ -119,6 +119,9 @@ const App = () => {
               <a href="#projects" className="px-8 py-4 sm:px-12 sm:py-6 bg-white text-black font-black rounded-full hover:bg-cyan-400 transition-all flex items-center gap-3 text-base sm:text-lg group shadow-2xl">
                 {heroData.cta_text} <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </a>
+              <a href="/world/" className="px-8 py-4 sm:px-12 sm:py-6 border border-white/20 text-white font-black rounded-full hover:border-cyan-400 hover:text-cyan-400 transition-all flex items-center gap-3 text-base sm:text-lg group">
+                ZWANZIG JAHRE DURCHFLIEGEN <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              </a>
             </div>
           </div>
         </div>

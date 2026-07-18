@@ -887,6 +887,12 @@ EOF
 
 ## Task 8: Scroll-Timing justieren
 
+> **Reihenfolge korrigiert (2026-07-18):** Diese Task gehört **nach Task 9**, nicht davor.
+> Ob eine Szene zu schnell oder zu zäh wirkt, lässt sich an synthetischen Testclips nicht
+> beurteilen — dafür braucht es die Greybox. Der bildinhalt-unabhängige Teil
+> (Scroll-Performance) ist bereits gemessen und in Spec §7 dokumentiert: null Long Tasks,
+> Median-Frame 8,3 ms, INP ≤ 64 ms. Es bleibt reine Regie.
+
 Diese Task hat kein objektives Erfolgskriterium — sie ist Regie, keine Technik. Sie steht hier, weil das Timing die einzige Größe ist, die sich nur am laufenden Ding beurteilen lässt (Spec §6).
 
 **Files:**

@@ -239,6 +239,23 @@ Preview-Server greift auf den SPA-Fallback zurück und antwortet mit `index.html
 Status 200. Wer Fehlerfälle lokal testen will, muss die Response abfangen
 (`page.route(...)`), sonst testet er nichts.
 
+**Scroll-Performance ist unkritisch.** Gemessen 2026-07-18 gegen den Production-Build,
+1440×900, kompletter Durchlauf über 120 Scroll-Schritte:
+
+| Metrik | Wert | Budget |
+|---|---|---|
+| Long Tasks | **0** | keine über 50 ms |
+| Frame-Zeit Median | 8,3 ms | 16,7 ms (60 fps) |
+| Frame-Zeit p95 | 25 ms | — |
+| Frames > 50 ms | 3 von 173 | — |
+| INP (Route-Dot-Klicks) | 24 / 40 / 64 ms | ≤ 200 ms |
+
+Null Long Tasks bei neun gleichzeitig dekodierenden Clips ist das eigentliche Ergebnis —
+es bestätigt die Seek-Koaleszenz der Engine (`scrub-engine.js:281`: nie ein neuer Seek,
+solange der Decoder am vorigen arbeitet). Da `testsrc2`-Rauschen der teuerste denkbare
+Decode ist, sind das Worst-Case-Werte; gerenderte Dioramen werden günstiger liegen.
+Auf Desktop-Hardware gemessen — die Mobil-Messung steht aus und ist die relevantere.
+
 **iOS** braucht eine User-Geste, bevor ein stummes Video zuverlässig dekodiert; die Engine
 behandelt das (`primeVideo`, `scrub-engine.js:296`). Auf echtem Gerät zu verifizieren,
 nicht im Desktop-Emulator.

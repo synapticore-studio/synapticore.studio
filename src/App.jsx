@@ -76,10 +76,10 @@ const App = () => {
           </div>
 
           <div className="hidden md:flex items-center gap-10 text-[10px] font-black tracking-[0.2em] uppercase">
-            <a href="#lab" className="hover:text-cyan-400 transition-colors">The Lab</a>
-            <a href="#projects" className="hover:text-cyan-400 transition-colors">Cases</a>
-            <a href="#heritage" className="hover:text-cyan-400 transition-colors">Timeline</a>
-            <a href="#contact" className="px-6 py-2 border border-cyan-400 text-cyan-400 rounded-full hover:bg-cyan-400 hover:text-black transition-all font-bold tracking-widest text-xs">Collaborate</a>
+            <a href="#lab" className="hover:text-cyan-400 transition-colors">Leistungen</a>
+            <a href="#projects" className="hover:text-cyan-400 transition-colors">Erfahrung</a>
+            <a href="#heritage" className="hover:text-cyan-400 transition-colors">Werdegang</a>
+            <a href="#contact" className="px-6 py-2 border border-cyan-400 text-cyan-400 rounded-full hover:bg-cyan-400 hover:text-black transition-all font-bold tracking-widest text-xs">Kontakt</a>
           </div>
 
           <button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -90,10 +90,10 @@ const App = () => {
         {isMenuOpen && (
           <div className="md:hidden bg-black/95 backdrop-blur-xl border-t border-white/10">
             <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
-              <a href="#lab" onClick={() => setIsMenuOpen(false)} className="text-sm font-bold uppercase tracking-widest text-white hover:text-cyan-400 transition-colors py-2">The Lab</a>
-              <a href="#projects" onClick={() => setIsMenuOpen(false)} className="text-sm font-bold uppercase tracking-widest text-white hover:text-cyan-400 transition-colors py-2">Cases</a>
-              <a href="#heritage" onClick={() => setIsMenuOpen(false)} className="text-sm font-bold uppercase tracking-widest text-white hover:text-cyan-400 transition-colors py-2">Timeline</a>
-              <a href="#contact" onClick={() => setIsMenuOpen(false)} className="px-6 py-3 border border-cyan-400 text-cyan-400 rounded-full hover:bg-cyan-400 hover:text-black transition-all font-bold tracking-widest text-xs text-center mt-2">Collaborate</a>
+              <a href="#lab" onClick={() => setIsMenuOpen(false)} className="text-sm font-bold uppercase tracking-widest text-white hover:text-cyan-400 transition-colors py-2">Leistungen</a>
+              <a href="#projects" onClick={() => setIsMenuOpen(false)} className="text-sm font-bold uppercase tracking-widest text-white hover:text-cyan-400 transition-colors py-2">Erfahrung</a>
+              <a href="#heritage" onClick={() => setIsMenuOpen(false)} className="text-sm font-bold uppercase tracking-widest text-white hover:text-cyan-400 transition-colors py-2">Werdegang</a>
+              <a href="#contact" onClick={() => setIsMenuOpen(false)} className="px-6 py-3 border border-cyan-400 text-cyan-400 rounded-full hover:bg-cyan-400 hover:text-black transition-all font-bold tracking-widest text-xs text-center mt-2">Kontakt</a>
             </div>
           </div>
         )}
@@ -116,7 +116,7 @@ const App = () => {
             </h1>
             <p className="text-lg sm:text-xl md:text-3xl text-slate-400 max-w-4xl leading-tight mb-8 md:mb-14 font-light italic" dangerouslySetInnerHTML={{ __html: heroData.description }} />
             <div className="flex flex-wrap gap-4">
-              <a href="#projects" className="px-8 py-4 sm:px-12 sm:py-6 bg-white text-black font-black rounded-full hover:bg-cyan-400 transition-all flex items-center gap-3 text-base sm:text-lg group shadow-2xl">
+              <a href="#lab" className="px-8 py-4 sm:px-12 sm:py-6 bg-white text-black font-black rounded-full hover:bg-cyan-400 transition-all flex items-center gap-3 text-base sm:text-lg group shadow-2xl">
                 {heroData.cta_text} <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </a>
               <a href="/world/" className="px-8 py-4 sm:px-12 sm:py-6 border border-white/20 text-white font-black rounded-full hover:border-cyan-400 hover:text-cyan-400 transition-all flex items-center gap-3 text-base sm:text-lg group">
@@ -145,10 +145,10 @@ const App = () => {
       <section id="lab" className="py-16 md:py-32 relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mb-12 md:mb-24">
-            <h2 className="text-sm font-mono text-cyan-400 mb-6 tracking-[0.5em] uppercase italic">The Studio Philosophy</h2>
-            <h3 className="text-4xl md:text-7xl font-black italic uppercase tracking-tighter leading-none mb-8">Thinking in Logic. <br /><span className="text-cyan-400">Building in Code.</span></h3>
+            <h2 className="text-sm font-mono text-cyan-400 mb-6 tracking-[0.5em] uppercase italic">Was ich anbiete</h2>
+            <h3 className="text-4xl md:text-7xl font-black italic uppercase tracking-tighter leading-none mb-8">Werkzeuge für <br /><span className="text-cyan-400">Ihre Pipeline.</span></h3>
             <p className="text-slate-400 text-xl font-light italic">
-              20+ Jahre DCC-Erfahrung, verdichtet in einem Studio. Von prozeduraler Asset-Erzeugung über Virtual Production bis Agentic DCC Pipelines – wir produzieren, was andere planen.
+              Ich unterstütze Teams dabei, wiederholbare Schritte in 3D- und Echtzeit-Pipelines mit Skripten, Werkzeugen und Agenten zu verbinden. Gestaltung und Freigabe bleiben bei den Menschen im Projekt.
             </p>
           </div>
 
@@ -179,15 +179,45 @@ const App = () => {
         </div>
       </section>
 
+      <section className="py-16 md:py-24 border-t border-white/5">
+        <div className="container mx-auto px-4 sm:px-6">
+          <p className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-5">Vom Skript bis ins Level</p>
+          <h2 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter mb-10">Ein Workflow. <span className="text-cyan-400">Vier Schritte.</span></h2>
+          <ol className="grid md:grid-cols-4 gap-6 text-slate-400 leading-relaxed">
+            <li><strong className="block text-white mb-2">01 · Erzeugen</strong>Skripte und prozedurale Werkzeuge unterstützen die Asset-Erstellung in Blender.</li>
+            <li><strong className="block text-white mb-2">02 · Übergeben</strong>Assets werden für die Weiterarbeit in der Engine vorbereitet und übertragen.</li>
+            <li><strong className="block text-white mb-2">03 · Weiterarbeiten</strong>Werkzeuge und Agenten unterstützen die Arbeit an Szenen und Leveln im Editor.</li>
+            <li><strong className="block text-white mb-2">04 · Prüfen</strong>Ergebnisse werden an den Projektkriterien gemessen; Ihr Team entscheidet über die Freigabe.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-24 border-t border-white/5">
+        <div className="container mx-auto px-4 sm:px-6">
+          <p className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-5">Open Source</p>
+          <h2 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter mb-8">Werkzeuge zum <span className="text-cyan-400">Ansehen.</span></h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <a href="https://github.com/synapticore-studio/bpy-widget" target="_blank" rel="noopener noreferrer" className="p-8 rounded-2xl border border-white/10 bg-white/[0.03] hover:border-cyan-400/50 transition-colors">
+              <h3 className="text-2xl font-bold mb-3">bpy-widget <ExternalLink size={16} className="inline" /></h3>
+              <p className="text-slate-400">Ein interaktives Blender-Viewport-Widget für Notebooks mit Echtzeit-Rendering über Eevee Next.</p>
+            </a>
+            <a href="https://github.com/synapticore-studio/astronomical" target="_blank" rel="noopener noreferrer" className="p-8 rounded-2xl border border-white/10 bg-white/[0.03] hover:border-cyan-400/50 transition-colors">
+              <h3 className="text-2xl font-bold mb-3">astronomical <ExternalLink size={16} className="inline" /></h3>
+              <p className="text-slate-400">Eine Blender-Erweiterung für astronomische Visualisierung mit FITS-Import und wissenschaftlichen Daten.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section id="projects" className="py-16 md:py-32 bg-[#050505] relative">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="mb-12 md:mb-32 flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div>
-              <h2 className="text-sm font-mono text-cyan-400 mb-4 tracking-[0.4em] uppercase italic">The Archives</h2>
-              <h3 className="text-4xl md:text-[6rem] font-black uppercase tracking-tighter italic leading-none">Global <br />Showcases.</h3>
+              <h2 className="text-sm font-mono text-cyan-400 mb-4 tracking-[0.4em] uppercase italic">Erfahrung & Entwicklung</h2>
+              <h3 className="text-4xl md:text-[6rem] font-black uppercase tracking-tighter italic leading-none">Arbeit, die <br />verbindet.</h3>
             </div>
             <div className="max-w-xs text-slate-500 text-xs font-mono uppercase tracking-widest leading-relaxed">
-              Validierte Systeme für Weltmarken // Unabhängige technische Führung // Direct Supplier Trust.
+              Eigene Entwicklungen und persönliche Projekterfahrung aus Anstellungen und freiberuflicher Arbeit.
             </div>
           </div>
 
@@ -207,7 +237,7 @@ const App = () => {
                     <div className="absolute top-4 right-4 sm:top-10 sm:right-10 flex flex-col items-end gap-2">
                       <div className="flex items-center gap-2 px-5 py-2 bg-black/60 backdrop-blur-md border border-white/20 rounded-full text-[10px] font-black uppercase tracking-widest text-cyan-400 shadow-xl">
                         {caseStudy.case_id === 'ai-rust' ? <Bot size={12} /> : caseStudy.case_id === 'vw-streaming' ? <UserCheck size={12} /> : <Award size={12} />}
-                        {caseStudy.case_id === 'ai-rust' ? 'Studio R&D' : caseStudy.case_id === 'vw-streaming' ? 'Enterprise Track Record' : 'NVIDIA Featured'}
+                        {caseStudy.case_id === 'ai-rust' ? 'In Entwicklung' : 'Persönliche Erfahrung'}
                       </div>
                     </div>
 
@@ -246,14 +276,14 @@ const App = () => {
         <div className="container mx-auto px-4 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl sm:text-6xl md:text-[10rem] font-black uppercase tracking-tighter italic mb-8 md:mb-14 leading-[0.85]">
-              Forge <br /><span className="text-cyan-400 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 font-black">The Future.</span>
+              Ihr Projekt. <br /><span className="text-cyan-400 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 font-black">Ihr Workflow.</span>
             </h2>
             <p className="text-slate-400 text-2xl md:text-3xl mb-16 font-light italic">
-              Bereit für die Architektur der nächsten Generation? Kontaktieren Sie das Lead-Studio hinter 20 Jahren DCC-, Cloud- & AI-Exzellenz.
+              Welche Schritte in Ihrer 3D-Pipeline möchten Sie vereinfachen? Schreiben Sie mir, mit welchen Werkzeugen Ihr Team arbeitet.
             </p>
             <div className="flex flex-col md:flex-row justify-center items-center gap-10">
               <a href={mailtoLink(EMAIL_DOMAIN)} className="group px-8 py-4 sm:px-16 sm:py-8 bg-white text-black font-black rounded-full hover:bg-cyan-400 transition-all text-lg sm:text-2xl shadow-2xl active:scale-95 flex items-center gap-4">
-                CONSULT STUDIO <Mail size={24} className="group-hover:rotate-12 transition-transform" />
+                PROJEKT BESPRECHEN <Mail size={24} className="group-hover:rotate-12 transition-transform" />
               </a>
               <div className="flex flex-col items-center gap-4 mt-4">
                 <span className="text-sm font-mono text-slate-500">{getEmail(EMAIL_DOMAIN)}</span>
@@ -272,7 +302,7 @@ const App = () => {
             <span className="text-[10px] font-mono uppercase tracking-[0.5em] text-slate-700 italic font-bold">Synapticore Studio // Björn Bethge – 20+ Jahre DCC</span>
             <div className="flex flex-wrap gap-4 sm:gap-8 opacity-20 grayscale items-center text-sm font-black italic tracking-tighter text-slate-400">
               <span>BLENDER 2.4 ORIGIN</span>
-              <span>VW GROUP PARTNER ID</span>
+              <span>INDUSTRIEERFAHRUNG</span>
               <span>ADIDAS / NVIDIA</span>
               <span>VIRTUAL PRODUCTION</span>
               <span>AGENTIC DCC</span>

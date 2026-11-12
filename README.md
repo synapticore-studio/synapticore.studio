@@ -19,6 +19,8 @@ npm run build    # Production build → dist/
 npm run preview  # Preview build on port 4173
 ```
 
+Hero, Leistungen und Projekterfahrung werden im CMS gepflegt und mit `uv run cms export --site synapticore-studio` aus dem CMS-Verzeichnis exportiert. Der Pipeline-Ablauf und die Links zu Werkzeugen stehen in `src/App.jsx`.
+
 ## License
 
 [MIT Ethical Use](LICENSE)

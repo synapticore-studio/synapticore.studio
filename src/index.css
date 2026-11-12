@@ -50,7 +50,7 @@
 .studio-robot__controls button:hover, .studio-robot__controls button[aria-pressed="true"] { color: #67e8f9; }
 .studio-robot__credit { margin-top: .4rem; color: #768489; font-size: 10px; }
 .studio-robot__credit a:hover { color: #a5f3fc; }
-@media (min-width: 1024px) { .studio-hero-content { max-width: 68%; } .studio-hero-content h1 { font-size: clamp(3.6rem, 6vw, 6.2rem); } }
+@media (min-width: 1024px) { .studio-hero-content { max-width: 68%; } .studio-hero-content h1 { font-size: clamp(3.4rem, 5.5vw, 5.5rem); } }
 @media (max-width: 1023px) { .studio-hero { flex-direction: column; align-items: stretch; padding-top: 9rem; } .studio-robot { position: fixed; top: auto; bottom: 1rem; left: -60px; transform: none; width: 230px; margin: 0; } .studio-robot__stage { height: 235px; min-height: 0; } }
 @media (max-width: 480px) { .studio-robot { left: -66px; width: 210px; } .studio-robot__stage { height: 205px; } }
 

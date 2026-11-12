@@ -209,7 +209,7 @@ const App = () => {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mb-12 md:mb-24">
             <h2 className="text-sm font-mono text-cyan-400 mb-6 tracking-[0.5em] uppercase italic">Was ich anbiete</h2>
-            <h3 className="text-4xl md:text-7xl font-black italic uppercase tracking-tighter leading-none mb-8">Von der Pipeline <br /><span className="text-cyan-400">zum Erlebnis.</span></h3>
+            <h3 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter leading-none mb-8">Von der Pipeline <br /><span className="text-cyan-400">zum Erlebnis.</span></h3>
             <p className="text-slate-400 text-xl font-light italic">
               Ich entwickle die Werkzeuge und Anwendungen, mit denen Teams 3D-Inhalte erzeugen, wissenschaftliche Daten untersuchen und KI in ihrer Arbeit einsetzen können.
             </p>
@@ -291,7 +291,7 @@ const App = () => {
           <div className="mb-12 md:mb-32 flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div>
               <h2 className="text-sm font-mono text-cyan-400 mb-4 tracking-[0.4em] uppercase italic">Erfahrung & Entwicklung</h2>
-              <h3 className="text-4xl md:text-[6rem] font-black uppercase tracking-tighter italic leading-none">Arbeit, die <br />verbindet.</h3>
+              <h3 className="text-4xl md:text-6xl font-black uppercase tracking-tighter italic leading-none">Arbeit, die <br />verbindet.</h3>
             </div>
             <div className="max-w-md text-slate-400 text-base leading-relaxed">
               Ich bin Björn Bethge, Founder &amp; Creative Technologist von synapticore.studio. Als technischer Berater und Entwickler habe ich IT, Forschung, Entwicklung und Design in VR/AR-Projekten und der virtuellen Absicherung zusammengebracht. Technische Details gehörten dabei zum Alltag – etwa Latenz und Performance, die für den Komfort in VR entscheidend sind. Heute verbinde ich diese Erfahrung mit Digital Twins, KI und interaktiven 3D-Anwendungen.
@@ -305,7 +305,7 @@ const App = () => {
                   <span className="studio-experience__number" aria-hidden="true">{String(idx + 1).padStart(2, '0')}</span>
                   <div>
                     <p className="text-xs font-mono text-cyan-400 mb-4 tracking-widest uppercase italic">{caseStudy.brand}</p>
-                    <h4 className="text-3xl md:text-5xl font-black uppercase tracking-tight italic leading-none">{caseStudy.title}</h4>
+                    <h4 className="text-3xl md:text-4xl font-black uppercase tracking-tight italic leading-none">{caseStudy.title}</h4>
                   </div>
                 </div>
                 <div className="studio-experience__body">
@@ -326,8 +326,8 @@ const App = () => {
       <section id="contact" className="py-16 md:py-40 relative">
         <div className="container mx-auto px-4 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl sm:text-6xl md:text-[10rem] font-black uppercase tracking-tighter italic mb-8 md:mb-14 leading-[0.85]">
-              Ihr Projekt. <br /><span className="text-cyan-400 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 font-black">Ihr Workflow.</span>
+            <h2 className="text-[clamp(2rem,6vw,5.5rem)] font-black uppercase tracking-tighter italic mb-8 md:mb-12 leading-[0.95]">
+              <span className="whitespace-nowrap">Ihr Projekt.</span><br /><span className="whitespace-nowrap text-cyan-400 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 font-black">Ihr Workflow.</span>
             </h2>
             <p className="text-slate-400 text-2xl md:text-3xl mb-16 font-light italic">
               Sie arbeiten an einem Digital Twin, einer VR-Anwendung oder synthetischen Daten für KI und Robotik? Schreiben Sie mir, welche Aufgabe Sie lösen möchten und welche Systeme Ihr Team nutzt.

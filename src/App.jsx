@@ -185,8 +185,8 @@ const App = () => {
           <h2 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter mb-10">Was entstehen <span className="text-cyan-400">kann.</span></h2>
           <div className="grid md:grid-cols-2 gap-8 text-slate-400 leading-relaxed">
             <div><h3 className="text-xl font-bold text-white mb-3">Szenen & Varianten</h3><p>Prozedurale 3D-Szenen und Assets, deren Materialien, Beleuchtung oder Kameraperspektiven gezielt verändert werden können.</p></div>
-            <div><h3 className="text-xl font-bold text-white mb-3">Synthetische Datensätze</h3><p>Gerenderte Bildvarianten und – passend zur Aufgabe – Annotationen und Metadaten für Training und Tests von Computer Vision.</p></div>
-            <div><h3 className="text-xl font-bold text-white mb-3">Wissenschaftliche Visualisierungen</h3><p>Räumliche Daten und Simulationsergebnisse als erkundbare 3D-Szenen und interaktive Ansichten.</p></div>
+            <div><h3 className="text-xl font-bold text-white mb-3">Synthetische Datensätze</h3><p>Gerenderte Bildvarianten für Objekterkennung und Bildsegmentierung – mit passenden Annotationen und Metadaten für Training und Tests.</p></div>
+            <div><h3 className="text-xl font-bold text-white mb-3">Wissenschaftliche Visualisierungen</h3><p>Messdaten, räumliche Datensätze und Simulationsergebnisse als erkundbare 3D-Szenen für Analyse und Präsentation.</p></div>
             <div><h3 className="text-xl font-bold text-white mb-3">Interaktive Prototypen</h3><p>Echtzeit-Anwendungen, in denen Menschen 3D-Inhalte erkunden und mit KI-Funktionen interagieren können.</p></div>
           </div>
           <p className="mt-10 text-sm text-slate-400 max-w-3xl leading-relaxed">Synthetische Daten ergänzen reale Daten. Ob sie für einen Anwendungsfall geeignet sind, hängt unter anderem von Szenenvielfalt und Abgleich mit realen Daten ab.</p>

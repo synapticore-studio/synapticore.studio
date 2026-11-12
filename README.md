@@ -1,5 +1,7 @@
 # synapticore.studio
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N71WOHZ3)
+
 **Agentic DCC Pipelines & Interactive AI Experiences**
 
 [\![Live](https://img.shields.io/badge/synapticore.studio-live-blue?style=flat-square)](https://synapticore.studio)
@@ -13,6 +15,8 @@
 Kontakt und Impressum verwenden `hello@synapticore.studio`.
 
 ## Development
+
+Der GitHub-Pages-Build benötigt das Repository-Secret `CMS_DEPLOY_KEY`: einen privaten SSH-Deploy-Key mit ausschließlich lesendem Zugriff auf `agentic-dev-io/cms`.
 
 ```bash
 npm install

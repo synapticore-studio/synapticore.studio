@@ -16,6 +16,8 @@ Kontakt und Impressum verwenden `hello@synapticore.studio`.
 
 ## Development
 
+Unter 1800 CSS-Pixeln steht der Roboter im Seitenfluss; auf breiten Ansichten ist links Platz für die feste Figur reserviert, damit sie keine Texte überlagert.
+
 Der GitHub-Pages-Build benötigt das Repository-Secret `CMS_DEPLOY_KEY`: einen privaten SSH-Deploy-Key mit ausschließlich lesendem Zugriff auf `agentic-dev-io/cms`.
 
 ```bash

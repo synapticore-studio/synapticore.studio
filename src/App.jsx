@@ -64,6 +64,18 @@ const App = () => {
   return (
     <div className="studio-shell min-h-screen bg-[#020202] text-white font-sans selection:bg-cyan-500/30">
       <div className="studio-atmosphere" aria-hidden="true"><div className="studio-atmosphere__grid" /></div>
+        <div className="studio-spatial" aria-hidden="true">
+          <div className="studio-spatial__halo" />
+          <div className="studio-spatial__scene">
+            <div className="studio-spatial__orbit studio-spatial__orbit--one" />
+            <div className="studio-spatial__orbit studio-spatial__orbit--two" />
+            <div className="studio-spatial__orbit studio-spatial__orbit--three" />
+            <div className="studio-spatial__core"><i /><i /><i /></div>
+            <span className="studio-spatial__point studio-spatial__point--one" />
+            <span className="studio-spatial__point studio-spatial__point--two" />
+            <span className="studio-spatial__point studio-spatial__point--three" />
+          </div>
+        </div>
       <nav className={`fixed w-full z-[100] transition-all duration-500 ${scrolled ? 'bg-black/95 backdrop-blur-xl border-b border-white/10 py-4 shadow-2xl' : 'bg-transparent py-8'}`}>
         <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
           <div className="flex items-center gap-4 group cursor-pointer">
@@ -106,19 +118,6 @@ const App = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1400px] h-[900px] bg-blue-600/5 rounded-full blur-[180px]"></div>
         </div>
 
-        <div className="studio-spatial" aria-hidden="true">
-          <div className="studio-spatial__halo" />
-          <div className="studio-spatial__scene">
-            <div className="studio-spatial__orbit studio-spatial__orbit--one" />
-            <div className="studio-spatial__orbit studio-spatial__orbit--two" />
-            <div className="studio-spatial__orbit studio-spatial__orbit--three" />
-            <div className="studio-spatial__core"><i /><i /><i /></div>
-            <span className="studio-spatial__point studio-spatial__point--one" />
-            <span className="studio-spatial__point studio-spatial__point--two" />
-            <span className="studio-spatial__point studio-spatial__point--three" />
-          </div>
-          <div className="studio-spatial__caption"><span>SPATIAL SYSTEMS</span><span>01 / 03</span></div>
-        </div>
         <div className="container mx-auto px-4 sm:px-6 relative z-10 pointer-events-none">
           <div className="max-w-6xl studio-hero-content pointer-events-auto">
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-cyan-400 text-[10px] font-bold tracking-[0.3em] uppercase mb-8">

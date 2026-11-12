@@ -42,20 +42,20 @@ export default function RobotGuide({ variant = 'dr02' }) {
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(34, 1, 0.1, 100);
-    camera.position.set(0, 1.05, 3.9);
-    camera.lookAt(0, 1.0, 0);
+    camera.position.set(0, 1.38, 3.1);
+    camera.lookAt(0, 1.38, 0);
     const pmrem = new THREE.PMREMGenerator(renderer);
     const room = new RoomEnvironment();
     const environment = pmrem.fromScene(room, 0.04);
     scene.environment = environment.texture;
-    scene.environmentIntensity = 0.6;
+    scene.environmentIntensity = 0.5;
     room.dispose();
-    const key = new THREE.DirectionalLight(0xe5f3f2, 2.0);
+    const key = new THREE.DirectionalLight(0xffe9d8, 1.65);
     key.position.set(-3, 5, 4); scene.add(key);
-    const cyan = new THREE.DirectionalLight(0x52cbd5, 1.1);
+    const cyan = new THREE.DirectionalLight(0x6ccbd0, 0.7);
     cyan.position.set(3, 2, -2); scene.add(cyan);
-    const warm = new THREE.DirectionalLight(0xffab81, 0.5);
-    warm.position.set(-3, 1, -3); scene.add(warm);
+    const warm = new THREE.DirectionalLight(0xff9a64, 1.35);
+    warm.position.set(-3, 1.5, 2); scene.add(warm);
 
     // A restrained HDR bloom preserves the transparent backdrop and keeps
     // the existing site atmosphere visible through the canvas.
@@ -197,6 +197,12 @@ export default function RobotGuide({ variant = 'dr02' }) {
       robot = gltf.scene;
       robot.traverse((object) => {
         if (object.name.endsWith('_link') || object.name.endsWith('_joint')) joints.set(object.name, { object, rest: object.quaternion.clone() });
+        if (object.isMesh) {
+          const materials = Array.isArray(object.material) ? object.material : [object.material];
+          materials.forEach((material) => {
+            if (material?.isMeshStandardMaterial) material.roughness = Math.max(material.roughness, 0.48);
+          });
+        }
       });
       if (variant === 'g1') {
         // The G1 head is fixed to the torso. Use a point near the neck only

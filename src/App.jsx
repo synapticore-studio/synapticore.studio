@@ -189,7 +189,7 @@ const App = () => {
             <div><h3 className="text-xl font-bold text-white mb-3">Wissenschaftliche Visualisierungen</h3><p>Messdaten, räumliche Datensätze und Simulationsergebnisse als erkundbare 3D-Szenen für Analyse und Präsentation.</p></div>
             <div><h3 className="text-xl font-bold text-white mb-3">Interaktive Prototypen</h3><p>Echtzeit-Anwendungen, in denen Menschen 3D-Inhalte erkunden und mit KI-Funktionen interagieren können.</p></div>
           </div>
-          <p className="mt-10 text-sm text-slate-400 max-w-3xl leading-relaxed">Synthetische Daten ergänzen reale Daten. Ob sie für einen Anwendungsfall geeignet sind, hängt unter anderem von Szenenvielfalt und Abgleich mit realen Daten ab.</p>
+          <p className="mt-10 text-sm text-slate-400 max-w-3xl leading-relaxed">Synthetische Daten ergänzen reale Daten. Ihre Eignung hängt unter anderem davon ab, wie vielfältig die Szenen sind und wie gut sie mit realen Daten übereinstimmen.</p>
         </div>
       </section>
 
@@ -198,9 +198,9 @@ const App = () => {
           <p className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-5">Zusammenarbeit</p>
           <h2 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter mb-10">Von der Frage <span className="text-cyan-400">zur Anwendung.</span></h2>
           <ol className="grid md:grid-cols-4 gap-6 text-slate-400 leading-relaxed">
-            <li><strong className="block text-white mb-2">01 · Verstehen</strong>Ich kläre mit Ihrem Team Aufgabe, Daten, vorhandene Werkzeuge und Anforderungen.</li>
-            <li><strong className="block text-white mb-2">02 · Verbinden</strong>Ich entwickle einen passenden Workflow und integriere die benötigten Werkzeuge und Daten.</li>
-            <li><strong className="block text-white mb-2">03 · Prüfen</strong>Wir prüfen Ergebnisse und Grenzen anhand der vereinbarten Kriterien und realer Beispiele.</li>
+            <li><strong className="block text-white mb-2">01 · Verstehen</strong>Gemeinsam klären wir die Aufgabe, die vorhandenen Daten und Werkzeuge sowie die Anforderungen.</li>
+            <li><strong className="block text-white mb-2">02 · Verbinden</strong>Ich entwickle den Ablauf und binde die benötigten Werkzeuge und Daten ein.</li>
+            <li><strong className="block text-white mb-2">03 · Prüfen</strong>Wir prüfen die Ergebnisse anhand der vereinbarten Kriterien und halten ihre Grenzen fest.</li>
             <li><strong className="block text-white mb-2">04 · Übergeben</strong>Ich dokumentiere die Lösung und bereite sie für die Weiterarbeit in Ihrem Team vor.</li>
           </ol>
         </div>
@@ -243,7 +243,7 @@ const App = () => {
                     <div className="absolute inset-0 bg-[#0a0a0a] flex items-center justify-center">
                       <div className="text-center opacity-10 group-hover:opacity-20 transition-opacity">
                         <Box size={160} className="mx-auto mb-4" />
-                        <p className="text-[10px] font-mono tracking-[0.5em] uppercase">Visual_Data_Locked</p>
+                        <p className="text-[10px] font-mono tracking-[0.5em] uppercase">Projektübersicht</p>
                       </div>
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-transparent to-transparent"></div>
@@ -258,7 +258,7 @@ const App = () => {
                     <div className="absolute bottom-4 left-4 right-4 sm:bottom-12 sm:left-12 sm:right-12 flex flex-wrap gap-4 sm:gap-12">
                       {caseStudy.stats.map((stat, i) => (
                         <div key={i} className="flex flex-col border-l border-white/20 pl-4">
-                          <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest mb-1">Studio_Metric</span>
+                          <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest mb-1">Projektinfo</span>
                           <span className="text-xl font-black italic uppercase tracking-tighter">{stat}</span>
                         </div>
                       ))}
@@ -270,7 +270,7 @@ const App = () => {
                   <h4 className="text-sm font-mono text-cyan-400 mb-4 tracking-widest uppercase italic">{caseStudy.brand}</h4>
                   <h5 className="text-4xl md:text-5xl font-black mb-8 uppercase tracking-tight italic leading-none">{caseStudy.title}</h5>
                   <p className="text-slate-400 text-xl leading-relaxed mb-10 font-light border-l-4 border-cyan-500/20 pl-8 italic">
-                    &quot;{caseStudy.description}&quot;
+                    {caseStudy.description}
                   </p>
 
                   <div className="flex flex-wrap gap-3 mb-10">
@@ -315,7 +315,7 @@ const App = () => {
           <div className="flex flex-col gap-2">
             <span className="text-[10px] font-mono uppercase tracking-[0.5em] text-slate-700 italic font-bold">Synapticore Studio // Björn Bethge – 20+ Jahre DCC</span>
             <div className="flex flex-wrap gap-4 sm:gap-8 opacity-20 grayscale items-center text-sm font-black italic tracking-tighter text-slate-400">
-              <span>BLENDER 2.4 ORIGIN</span>
+              <span>3D & VISUALISIERUNG</span>
               <span>INDUSTRIEERFAHRUNG</span>
               <span>PRODUKTVISUALISIERUNG</span>
               <span>VIRTUAL PRODUCTION</span>

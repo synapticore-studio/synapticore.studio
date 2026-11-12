@@ -152,7 +152,7 @@ const App = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-3 gap-8">
             {capabilitiesData.map((cap, i) => {
               const IconComponent = capabilityIcons[cap.icon];
               return (

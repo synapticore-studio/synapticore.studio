@@ -312,9 +312,9 @@ const App = () => {
               <article key={caseStudy.case_id} className="studio-experience studio-reveal">
                 <div className="studio-experience__heading">
                   <span className="studio-experience__number" aria-hidden="true">{String(idx + 1).padStart(2, '0')}</span>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-xs font-mono text-cyan-400 mb-4 tracking-widest uppercase italic">{caseStudy.brand}</p>
-                    <h4 className="text-3xl md:text-4xl font-black uppercase tracking-tight italic leading-none">{caseStudy.title}</h4>
+                    <h4 className="text-2xl lg:text-3xl font-bold uppercase tracking-tight italic leading-tight [hyphens:auto] [overflow-wrap:anywhere]">{caseStudy.title}</h4>
                   </div>
                 </div>
                 <div className="studio-experience__body">
@@ -342,8 +342,8 @@ const App = () => {
               {t('Sie arbeiten an einem Digital Twin, einer VR-Anwendung oder synthetischen Daten für KI und Robotik? Schreiben Sie mir, welche Aufgabe Sie lösen möchten und welche Systeme Ihr Team nutzt.', 'Working on a digital twin, VR application or synthetic data for AI and robotics? Tell me what you want to solve and which systems your team uses.')}
             </p>
             <div className="flex flex-col md:flex-row justify-center items-center gap-10">
-              <a href={mailtoLink(EMAIL_DOMAIN)} className="group px-8 py-4 sm:px-16 sm:py-8 bg-white text-black font-black rounded-full hover:bg-cyan-400 transition-all text-lg sm:text-2xl shadow-2xl active:scale-95 flex items-center gap-4">
-                {t('PROJEKT BESPRECHEN', 'DISCUSS YOUR PROJECT')} <Mail size={24} className="group-hover:rotate-12 transition-transform" />
+              <a href={mailtoLink(EMAIL_DOMAIN)} className="group px-7 py-4 sm:px-9 bg-white text-black font-bold rounded-full hover:bg-cyan-400 transition-all text-base shadow-2xl active:scale-95 flex items-center gap-3">
+                {t('PROJEKT BESPRECHEN', 'DISCUSS YOUR PROJECT')} <Mail size={19} className="group-hover:rotate-12 transition-transform" />
               </a>
               <div className="flex flex-col items-center gap-4 mt-4">
                 <span className="text-sm font-mono text-slate-500">{getEmail(EMAIL_DOMAIN)}</span>

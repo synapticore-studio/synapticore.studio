@@ -16,7 +16,7 @@ Kontakt und Impressum verwenden `hello@synapticore.studio`.
 
 ## Development
 
-Unter 1800 CSS-Pixeln steht der Roboter im Seitenfluss; auf breiten Ansichten ist links Platz für die feste Figur reserviert, damit sie keine Texte überlagert.
+Auf Desktop bleibt der Roboter beim Scrollen fest am linken Rand; daneben ist Platz für die Inhalte reserviert. Unter 1024 CSS-Pixeln steht die Figur im Seitenfluss. Die Projekttitel brechen bei Bedarf um und der Kontaktbutton ist kompakt gehalten.
 
 Der GitHub-Pages-Build benötigt das Repository-Secret `CMS_DEPLOY_KEY`: einen privaten SSH-Deploy-Key mit ausschließlich lesendem Zugriff auf `agentic-dev-io/cms`.
 

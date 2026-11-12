@@ -1,6 +1,6 @@
 # synapticore.studio
 
-**Plugins, 3D-Pipelines & Interactive Experiences**
+**Agentic DCC Pipelines & Interactive AI Experiences**
 
 [\![Live](https://img.shields.io/badge/synapticore.studio-live-blue?style=flat-square)](https://synapticore.studio)
 

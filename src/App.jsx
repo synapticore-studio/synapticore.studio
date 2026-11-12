@@ -62,7 +62,8 @@ const App = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#020202] text-white font-sans selection:bg-cyan-500/30">
+    <div className="studio-shell min-h-screen bg-[#020202] text-white font-sans selection:bg-cyan-500/30">
+      <div className="studio-atmosphere" aria-hidden="true"><div className="studio-atmosphere__grid" /></div>
       <nav className={`fixed w-full z-[100] transition-all duration-500 ${scrolled ? 'bg-black/95 backdrop-blur-xl border-b border-white/10 py-4 shadow-2xl' : 'bg-transparent py-8'}`}>
         <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
           <div className="flex items-center gap-4 group cursor-pointer">
@@ -82,7 +83,7 @@ const App = () => {
             <a href="#contact" className="px-6 py-2 border border-cyan-400 text-cyan-400 rounded-full hover:bg-cyan-400 hover:text-black transition-all font-bold tracking-widest text-xs">Kontakt</a>
           </div>
 
-          <button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button className="md:hidden text-white" aria-label={isMenuOpen ? 'Menü schließen' : 'Menü öffnen'} aria-expanded={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X /> : <Menu />}
           </button>
         </div>
@@ -105,8 +106,21 @@ const App = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1400px] h-[900px] bg-blue-600/5 rounded-full blur-[180px]"></div>
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <div className="max-w-6xl">
+        <div className="studio-spatial" aria-hidden="true">
+          <div className="studio-spatial__halo" />
+          <div className="studio-spatial__scene">
+            <div className="studio-spatial__orbit studio-spatial__orbit--one" />
+            <div className="studio-spatial__orbit studio-spatial__orbit--two" />
+            <div className="studio-spatial__orbit studio-spatial__orbit--three" />
+            <div className="studio-spatial__core"><i /><i /><i /></div>
+            <span className="studio-spatial__point studio-spatial__point--one" />
+            <span className="studio-spatial__point studio-spatial__point--two" />
+            <span className="studio-spatial__point studio-spatial__point--three" />
+          </div>
+          <div className="studio-spatial__caption"><span>SPATIAL SYSTEMS</span><span>01 / 03</span></div>
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 relative z-10 pointer-events-none">
+          <div className="max-w-6xl studio-hero-content pointer-events-auto">
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-cyan-400 text-[10px] font-bold tracking-[0.3em] uppercase mb-8">
               <CircuitBoard size={14} className="text-cyan-400 animate-pulse" /> {heroData.features[0]}
             </div>
@@ -156,7 +170,7 @@ const App = () => {
             {capabilitiesData.map((cap, i) => {
               const IconComponent = capabilityIcons[cap.icon];
               return (
-                <div key={i} className="p-6 sm:p-10 border border-white/5 bg-gradient-to-b from-white/[0.02] to-transparent rounded-2xl sm:rounded-[3rem] hover:border-cyan-500/30 transition-all group">
+                <div key={i} className="studio-glass p-6 sm:p-10 rounded-2xl sm:rounded-[3rem] transition-all group">
                   <div className="w-14 h-14 rounded-2xl bg-cyan-400/10 flex items-center justify-center mb-8 group-hover:bg-cyan-400 group-hover:text-black transition-all">
                     {IconComponent && <IconComponent className="text-cyan-400" />}
                   </div>
@@ -179,7 +193,7 @@ const App = () => {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 border-t border-white/5 bg-white/[0.02]">
+      <section className="studio-section-glass py-16 md:py-24 border-t border-white/5">
         <div className="container mx-auto px-4 sm:px-6">
           <p className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-5">Von der Idee zum Ergebnis</p>
           <h2 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter mb-10">Was entstehen <span className="text-cyan-400">kann.</span></h2>
@@ -211,11 +225,11 @@ const App = () => {
           <p className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-5">Open Source</p>
           <h2 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter mb-8">Werkzeuge zum <span className="text-cyan-400">Ansehen.</span></h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <a href="https://github.com/synapticore-studio/bpy-widget" target="_blank" rel="noopener noreferrer" className="p-8 rounded-2xl border border-white/10 bg-white/[0.03] hover:border-cyan-400/50 transition-colors">
+            <a href="https://github.com/synapticore-studio/bpy-widget" target="_blank" rel="noopener noreferrer" className="studio-glass p-8 rounded-2xl transition-colors">
               <h3 className="text-2xl font-bold mb-3">bpy-widget <ExternalLink size={16} className="inline" /></h3>
               <p className="text-slate-400">Ein interaktives Blender-Viewport-Widget für Notebooks mit Echtzeit-Rendering über Eevee Next.</p>
             </a>
-            <a href="https://github.com/synapticore-studio/astronomical" target="_blank" rel="noopener noreferrer" className="p-8 rounded-2xl border border-white/10 bg-white/[0.03] hover:border-cyan-400/50 transition-colors">
+            <a href="https://github.com/synapticore-studio/astronomical" target="_blank" rel="noopener noreferrer" className="studio-glass p-8 rounded-2xl transition-colors">
               <h3 className="text-2xl font-bold mb-3">astronomical <ExternalLink size={16} className="inline" /></h3>
               <p className="text-slate-400">Eine Blender-Erweiterung für astronomische Visualisierung mit FITS-Import und wissenschaftlichen Daten.</p>
             </a>

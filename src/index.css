@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* A quiet spatial layer keeps the content legible while the studio moves. */
+.studio-shell { position: relative; isolation: isolate; overflow: clip; }
+.studio-atmosphere { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; background: radial-gradient(ellipse at 80% 28%, rgba(8, 110, 134, .12), transparent 38%), radial-gradient(ellipse at 10% 80%, rgba(180, 75, 32, .08), transparent 35%); }
+.studio-atmosphere__grid { position: absolute; inset: -50%; opacity: .24; background-image: linear-gradient(rgba(107, 204, 211, .07) 1px, transparent 1px), linear-gradient(90deg, rgba(107, 204, 211, .07) 1px, transparent 1px); background-size: 80px 80px; transform: perspective(800px) rotateX(66deg) translateY(20%); mask-image: radial-gradient(ellipse, #000 10%, transparent 65%); }
+.studio-spatial { position: absolute; z-index: 1; width: min(63vw, 840px); aspect-ratio: 1; top: 50%; right: -4%; transform: translateY(-50%); pointer-events: none; perspective: 1000px; }
+.studio-spatial__halo { position: absolute; inset: 8%; border-radius: 50%; background: radial-gradient(circle, rgba(31, 153, 166, .17), rgba(20, 83, 104, .05) 38%, transparent 68%); filter: blur(22px); }
+.studio-spatial__scene { position: absolute; inset: 15%; transform-style: preserve-3d; transform: rotateX(65deg) rotateZ(-24deg); animation: spatial-drift 36s ease-in-out infinite alternate; }
+.studio-spatial__orbit { position: absolute; inset: 5%; border: 1px solid rgba(101, 216, 224, .27); border-radius: 50%; transform-style: preserve-3d; box-shadow: inset 0 0 50px rgba(27, 177, 192, .035), 0 0 36px rgba(27, 177, 192, .045); }
+.studio-spatial__orbit--one { transform: rotateX(67deg); }
+.studio-spatial__orbit--two { transform: rotateY(67deg); border-color: rgba(255, 154, 103, .27); }
+.studio-spatial__orbit--three { transform: rotateZ(38deg); border-style: dashed; }
+.studio-spatial__core { position: absolute; inset: 32%; border: 1px solid rgba(110, 221, 231, .33); transform: rotateZ(45deg) translateZ(12px); background: linear-gradient(135deg, rgba(50, 169, 181, .12), rgba(8, 14, 19, .38)); box-shadow: 0 0 80px rgba(22, 198, 215, .12), inset 0 0 30px rgba(22, 198, 215, .09); backdrop-filter: blur(4px); }
+.studio-spatial__core i { position: absolute; inset: 14%; border: 1px solid rgba(115, 217, 225, .18); transform: translateZ(30px); }
+.studio-spatial__core i:nth-child(2) { inset: 27%; transform: translateZ(65px); }
+.studio-spatial__core i:nth-child(3) { inset: 39%; transform: translateZ(95px); background: rgba(105, 232, 238, .5); box-shadow: 0 0 25px #44dbe5; }
+.studio-spatial__point { position: absolute; width: 7px; height: 7px; border-radius: 50%; background: #a1f3f2; box-shadow: 0 0 18px 4px rgba(52, 224, 231, .5); }
+.studio-spatial__point--one { top: 13%; left: 44%; transform: translateZ(40px); }
+.studio-spatial__point--two { top: 53%; right: 3%; background: #ffb88f; box-shadow: 0 0 18px 4px rgba(255, 145, 88, .4); }
+.studio-spatial__point--three { bottom: 16%; left: 17%; transform: translateZ(-30px); }
+.studio-spatial__caption { position: absolute; bottom: 13%; left: 19%; right: 19%; display: flex; justify-content: space-between; border-top: 1px solid rgba(139, 221, 222, .15); padding-top: 12px; font: 10px/1.4 ui-monospace, monospace; letter-spacing: .2em; color: rgba(139, 221, 222, .4); }
+.studio-glass { border: 1px solid rgba(187, 231, 231, .11); background: linear-gradient(135deg, rgba(30, 53, 59, .32), rgba(10, 17, 21, .47)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .055), 0 20px 70px rgba(0, 0, 0, .17); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); }
+.studio-glass:hover { border-color: rgba(94, 223, 230, .4); background: linear-gradient(135deg, rgba(38, 78, 82, .36), rgba(10, 17, 21, .5)); }
+.studio-section-glass { background: linear-gradient(110deg, rgba(30, 62, 64, .18), rgba(255, 255, 255, .015)); backdrop-filter: blur(12px); }
+@keyframes spatial-drift { from { transform: rotateX(65deg) rotateZ(-24deg) rotateY(-5deg); } to { transform: rotateX(55deg) rotateZ(15deg) rotateY(18deg); } }
+@media (min-width: 1024px) { .studio-hero-content { max-width: 63%; } }
+@media (max-width: 1023px) { .studio-spatial { width: 85vw; right: -34%; opacity: .35; } .studio-spatial__caption { display: none; } }
+@media (max-width: 640px) { .studio-spatial { width: 110vw; right: -45%; opacity: .23; } }
+@media (prefers-reduced-motion: reduce) { .studio-spatial__scene { animation: none; } }

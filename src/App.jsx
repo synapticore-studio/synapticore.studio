@@ -148,7 +148,7 @@ const App = () => {
             <h2 className="text-sm font-mono text-cyan-400 mb-6 tracking-[0.5em] uppercase italic">Was ich anbiete</h2>
             <h3 className="text-4xl md:text-7xl font-black italic uppercase tracking-tighter leading-none mb-8">Von der Pipeline <br /><span className="text-cyan-400">zum Erlebnis.</span></h3>
             <p className="text-slate-400 text-xl font-light italic">
-              Für Teams, die synthetische Daten erzeugen, wissenschaftliche Daten räumlich visualisieren und KI in ihre 3D-Werkzeuge und Echtzeit-Anwendungen integrieren möchten.
+              Ich unterstütze Teams dabei, fachliche Anforderungen in 3D-Pipelines und interaktive Anwendungen zu übersetzen – von synthetischen Daten und wissenschaftlicher Visualisierung bis zur Integration von KI.
             </p>
           </div>
 
@@ -195,13 +195,13 @@ const App = () => {
 
       <section className="py-16 md:py-24 border-t border-white/5">
         <div className="container mx-auto px-4 sm:px-6">
-          <p className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-5">Vom Skript bis ins Level</p>
-          <h2 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter mb-10">Ein Workflow. <span className="text-cyan-400">Vier Schritte.</span></h2>
+          <p className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-5">Zusammenarbeit</p>
+          <h2 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter mb-10">Von der Frage <span className="text-cyan-400">zur Anwendung.</span></h2>
           <ol className="grid md:grid-cols-4 gap-6 text-slate-400 leading-relaxed">
-            <li><strong className="block text-white mb-2">01 · Erzeugen</strong>Skripte und prozedurale Werkzeuge unterstützen die Asset-Erstellung in Blender.</li>
-            <li><strong className="block text-white mb-2">02 · Übergeben</strong>Assets werden für die Weiterarbeit in der Engine vorbereitet und übertragen.</li>
-            <li><strong className="block text-white mb-2">03 · Weiterarbeiten</strong>Plugins und Agenten unterstützen die Arbeit an Szenen und Leveln direkt im Editor.</li>
-            <li><strong className="block text-white mb-2">04 · Prüfen</strong>Ergebnisse werden an den Projektkriterien gemessen; Ihr Team entscheidet über die Freigabe.</li>
+            <li><strong className="block text-white mb-2">01 · Verstehen</strong>Ich kläre mit Ihrem Team Aufgabe, Daten, vorhandene Werkzeuge und Anforderungen.</li>
+            <li><strong className="block text-white mb-2">02 · Verbinden</strong>Ich entwickle einen passenden Workflow und integriere die benötigten Werkzeuge und Daten.</li>
+            <li><strong className="block text-white mb-2">03 · Prüfen</strong>Wir prüfen Ergebnisse und Grenzen anhand der vereinbarten Kriterien und realer Beispiele.</li>
+            <li><strong className="block text-white mb-2">04 · Übergeben</strong>Ich dokumentiere die Lösung und bereite sie für die Weiterarbeit in Ihrem Team vor.</li>
           </ol>
         </div>
       </section>

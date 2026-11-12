@@ -89,6 +89,7 @@ export default function RobotGuide({ variant = 'dr02' }) {
     let walkAction = null;
     let waveAction = null;
     let greeted = false;
+    let greetingComplete = false;
 
     function resize() {
       const { width, height } = host.getBoundingClientRect();
@@ -141,6 +142,7 @@ export default function RobotGuide({ variant = 'dr02' }) {
       }
       // Settle into an asymmetric pose after the greeting, with gentle shifts.
       if (greeted && !waveAction.isRunning()) {
+        greetingComplete = true;
         const pose = smooth((elapsed - 5.7) / 1.2);
         setJoint(spec.names[4], 'y', pose * (0.09 + Math.sin(elapsed * 0.8) * 0.018));
         setJoint(spec.names[5], 'y', pose * (-0.07 + Math.sin(elapsed * 0.8 + 1.2) * 0.018));
@@ -152,7 +154,7 @@ export default function RobotGuide({ variant = 'dr02' }) {
       const head = gazeAnchor || joints.get(spec.pitch)?.object;
       let targetYaw = 0;
       let targetPitch = 0;
-      if (head && pointer.x !== null) {
+      if (greetingComplete && head && pointer.x !== null) {
         head.getWorldPosition(headPosition).project(camera);
         const rect = host.getBoundingClientRect();
         const headX = rect.left + (headPosition.x + 1) * rect.width / 2;

@@ -148,7 +148,7 @@ const App = () => {
             <h2 className="text-sm font-mono text-cyan-400 mb-6 tracking-[0.5em] uppercase italic">Was ich anbiete</h2>
             <h3 className="text-4xl md:text-7xl font-black italic uppercase tracking-tighter leading-none mb-8">Von der Pipeline <br /><span className="text-cyan-400">zum Erlebnis.</span></h3>
             <p className="text-slate-400 text-xl font-light italic">
-              Ich unterstütze Teams dabei, fachliche Anforderungen in 3D-Pipelines und interaktive Anwendungen zu übersetzen – von synthetischen Daten und wissenschaftlicher Visualisierung bis zur Integration von KI.
+              Ich entwickle die Werkzeuge und Anwendungen, mit denen Teams 3D-Inhalte erzeugen, wissenschaftliche Daten untersuchen und KI in ihrer Arbeit einsetzen können.
             </p>
           </div>
 

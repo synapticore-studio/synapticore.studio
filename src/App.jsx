@@ -231,7 +231,7 @@ const App = () => {
               <h3 className="text-4xl md:text-[6rem] font-black uppercase tracking-tighter italic leading-none">Arbeit, die <br />verbindet.</h3>
             </div>
             <div className="max-w-md text-slate-400 text-base leading-relaxed">
-              Ich bin Björn Bethge, Founder &amp; Creative Technologist von synapticore.studio. Als technischer Berater und Entwickler habe ich in verschiedenen Projekten Menschen aus IT, Forschung, Entwicklung und Design zusammengebracht – von VR/AR und virtueller Absicherung bis zu interaktiven 3D-Anwendungen. Dabei habe ich ein Gespür dafür entwickelt, neue Technologien zu verstehen und passende Lösungen für unterschiedliche Anforderungen zu finden. Diese Erfahrung fließt heute in meine Arbeit mit Agenten und Echtzeit-3D ein.
+              Ich bin Björn Bethge, Founder &amp; Creative Technologist von synapticore.studio. Als technischer Berater und Entwickler habe ich IT, Forschung, Entwicklung und Design in VR/AR-Projekten und der virtuellen Absicherung zusammengebracht. Technische Details gehörten dabei zum Alltag – etwa Latenz und Performance, die für den Komfort in VR entscheidend sind. Heute verbinde ich diese Erfahrung mit Digital Twins, KI und interaktiven 3D-Anwendungen.
             </div>
           </div>
 
@@ -293,7 +293,7 @@ const App = () => {
               Ihr Projekt. <br /><span className="text-cyan-400 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 font-black">Ihr Workflow.</span>
             </h2>
             <p className="text-slate-400 text-2xl md:text-3xl mb-16 font-light italic">
-              Sie möchten synthetische Daten erzeugen, wissenschaftliche Daten visualisieren oder KI in Ihre 3D-Pipeline integrieren? Schreiben Sie mir, was entstehen soll und welche Werkzeuge Ihr Team nutzt.
+              Sie arbeiten an einem Digital Twin, einer VR-Anwendung oder synthetischen Daten für KI und Robotik? Schreiben Sie mir, welche Aufgabe Sie lösen möchten und welche Systeme Ihr Team nutzt.
             </p>
             <div className="flex flex-col md:flex-row justify-center items-center gap-10">
               <a href={mailtoLink(EMAIL_DOMAIN)} className="group px-8 py-4 sm:px-16 sm:py-8 bg-white text-black font-black rounded-full hover:bg-cyan-400 transition-all text-lg sm:text-2xl shadow-2xl active:scale-95 flex items-center gap-4">

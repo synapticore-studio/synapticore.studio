@@ -342,7 +342,7 @@ const App = () => {
               Bereit für die Architektur der nächsten Generation? Kontaktieren Sie das Lead-Studio hinter 20 Jahren DCC-, Cloud- & AI-Exzellenz.
             </p>
             <div className="flex flex-col md:flex-row justify-center items-center gap-10">
-              <a href="mailto:core@synapticore.studio" className="group px-16 py-8 bg-white text-black font-black rounded-full hover:bg-cyan-400 transition-all text-2xl shadow-2xl active:scale-95 flex items-center gap-4">
+              <a href="mailto:hello@synapticore.studio" className="group px-16 py-8 bg-white text-black font-black rounded-full hover:bg-cyan-400 transition-all text-2xl shadow-2xl active:scale-95 flex items-center gap-4">
                 CONSULT STUDIO <Mail size={24} className="group-hover:rotate-12 transition-transform" />
               </a>
               <div className="flex items-center gap-4 text-xs font-mono uppercase tracking-[0.3em] text-slate-500">

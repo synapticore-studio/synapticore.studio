@@ -15,7 +15,7 @@ const ROBOTS = {
 const clamp = THREE.MathUtils.clamp;
 const smooth = (value) => { const t = clamp(value, 0, 1); return t * t * (3 - 2 * t); };
 
-export default function RobotGuide({ variant = 'dr02' }) {
+export default function RobotGuide({ variant = 'dr02', isEnglish = false }) {
   const spec = ROBOTS[variant];
   const canvasContainer = useRef(null);
   const waveRequest = useRef(false);
@@ -300,7 +300,7 @@ export default function RobotGuide({ variant = 'dr02' }) {
   }, []);
 
   return (
-    <button type="button" className={`robot-guide ${ready ? 'robot-guide--ready' : ''}`} onClick={() => { waveRequest.current = true; }} aria-label="Roboter erneut winken lassen" title="Zum Winken anklicken">
+    <button type="button" className={`robot-guide ${ready ? 'robot-guide--ready' : ''}`} onClick={() => { waveRequest.current = true; }} aria-label={isEnglish ? 'Make the robot wave again' : 'Roboter erneut winken lassen'} title={isEnglish ? 'Click to wave' : 'Zum Winken anklicken'}>
       {failed && <img className="robot-guide__poster" src={spec.poster} alt="" />}
       <span ref={canvasContainer} className="robot-guide__canvas" />
     </button>

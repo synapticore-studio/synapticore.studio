@@ -15,7 +15,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html'),
-        world: path.resolve(__dirname, 'world/index.html'),
+        en: path.resolve(__dirname, 'en/index.html'),
       },
     },
   },

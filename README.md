@@ -10,6 +10,8 @@
 - Content from DuckDB CMS (build-time JSON, zero runtime overhead)
 - Deployed via GitHub Pages + GitHub Actions
 
+Kontakt und Impressum verwenden `hello@synapticore.studio`.
+
 ## Development
 
 ```bash
@@ -19,12 +21,16 @@ npm run build    # Production build → dist/
 npm run preview  # Preview build on port 4173
 ```
 
+Die englische Fassung liegt unter `/en/`; ihre Übersetzungen für CMS-Inhalte stehen nach stabilen IDs in `src/content.en.js` und müssen bei inhaltlichen Änderungen mitgepflegt werden. Der englische Rechtstext liegt unter `/en/impressum.html`; das deutsche Original ist maßgeblich.
+
 Hero, Leistungen und Projekterfahrung werden im CMS gepflegt und mit `uv run cms export --site synapticore-studio` aus dem CMS-Verzeichnis exportiert. Der Abschnitt zu möglichen Ergebnissen, der Pipeline-Ablauf und die Links zu Werkzeugen stehen in `src/App.jsx`. Der räumliche Hintergrund und die Glaseffekte sind in `src/index.css` umgesetzt; die Animation respektiert `prefers-reduced-motion`.
 
 Die responsiven Überschriften bleiben im Kontaktbereich auf zwei lesbaren Zeilen. Der Erfahrungsbereich zeigt die CMS-Inhalte als kompakte Textabschnitte statt als Bildplatzhalter. Dezente Scrollanimationen und der Modellwechsel berücksichtigen `prefers-reduced-motion`.
 
 Die persönliche Projekterfahrung orientiert sich an der Inhaltsvorlage und dem [öffentlichen Profil](https://www.xing.com/profile/Bjoern_Bethge3); sie wird als Erfahrung aus Anstellungen und Projekten über Partner dargestellt.
 
+
+Der Scroll-Prototyp unter `world/` ist nicht Teil des Website-Builds. Seine Testmedien sind lokal unter `.work/scroll-world-media` aufbewahrt.
 
 ## Interaktiver Roboter
 

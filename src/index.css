@@ -78,3 +78,10 @@
   .studio-motion-ready .studio-reveal.is-visible { opacity: 1; transform: translateY(0); }
 }
 @media (prefers-reduced-motion: reduce) { .studio-robot .robot-guide__canvas, .studio-robot__stage::before, .studio-robot__stage::after { transition: none; } }
+
+/* Keep the language switch legible without squeezing the mobile menu. */
+.studio-language-switch { color: #b7c7cc; border: 1px solid rgba(187,231,231,.18); border-radius: 999px; padding: 6px 9px; font: 700 10px/1 ui-monospace, monospace; letter-spacing: .08em; }
+.studio-language-switch:hover { color: #67e8f9; border-color: rgba(94,223,230,.5); }
+.studio-language-switch:focus-visible { outline: 2px solid #67e8f9; outline-offset: 4px; }
+@media (min-width: 768px) and (max-width: 1100px) { .studio-desktop-menu { gap: 1rem; } }
+@media (max-width: 480px) { .studio-brand { gap: 8px; } .studio-brand-mark { width: 36px; height: 36px; } .studio-brand-title { font-size: 1rem; } .studio-brand-subtitle { font-size: 8px; letter-spacing: .15em; } }

@@ -51,8 +51,14 @@
 .studio-robot__credit { margin-top: .4rem; color: #768489; font-size: 10px; }
 .studio-robot__credit a:hover { color: #a5f3fc; }
 @media (min-width: 1024px) { .studio-hero-content { max-width: 68%; } .studio-hero-content h1 { font-size: clamp(3.4rem, 5.5vw, 5.5rem); } }
-@media (max-width: 1023px) { .studio-hero { flex-direction: column; align-items: stretch; padding-top: 9rem; } .studio-robot { position: fixed; top: auto; bottom: 1rem; left: -60px; transform: none; width: 230px; margin: 0; } .studio-robot__stage { height: 235px; min-height: 0; } }
-@media (max-width: 480px) { .studio-robot { left: -66px; width: 210px; } .studio-robot__stage { height: 205px; } }
+@media (max-width: 1023px) {
+  .studio-hero { flex-direction: column; align-items: stretch; padding-top: 9rem; }
+  .studio-robot { position: relative; inset: auto; transform: none; width: min(calc(100% - 32px), 380px); margin: 0 auto 3rem; }
+  .studio-robot__stage { height: clamp(300px, 90vw, 400px); min-height: 0; }
+  .studio-robot__controls { gap: .5rem; align-items: center; }
+  .studio-robot__controls button { min-height: 44px; padding: 8px; }
+  .studio-robot__credit { margin-top: 0; font-size: 11px; }
+}
 
 /* A quiet hand-off between models, followed by the incoming greeting. */
 .studio-robot__stage::before, .studio-robot__stage::after { transition: opacity .45s ease; }

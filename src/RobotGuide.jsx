@@ -50,11 +50,11 @@ export default function RobotGuide({ variant = 'dr02' }) {
     scene.environment = environment.texture;
     scene.environmentIntensity = 0.5;
     room.dispose();
-    const key = new THREE.DirectionalLight(0xffe9d8, 1.65);
+    const key = new THREE.DirectionalLight(0xe9f1ef, 1.65);
     key.position.set(-3, 5, 4); scene.add(key);
     const cyan = new THREE.DirectionalLight(0x6ccbd0, 0.7);
     cyan.position.set(3, 2, -2); scene.add(cyan);
-    const warm = new THREE.DirectionalLight(0xff9a64, 1.35);
+    const warm = new THREE.DirectionalLight(0xffbb91, 0.35);
     warm.position.set(-3, 1.5, 2); scene.add(warm);
 
     // A restrained HDR bloom preserves the transparent backdrop and keeps

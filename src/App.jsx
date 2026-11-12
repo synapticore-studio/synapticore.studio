@@ -1,4 +1,4 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import {
   Cpu,
   Activity,
@@ -56,6 +56,42 @@ const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [robotVariant, setRobotVariant] = useState('dr02');
+  const [robotLeaving, setRobotLeaving] = useState(false);
+  const switchTimer = useRef(null);
+
+  const selectRobot = (nextVariant) => {
+    if (nextVariant === robotVariant || robotLeaving) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setRobotVariant(nextVariant);
+      return;
+    }
+    setRobotLeaving(true);
+    switchTimer.current = window.setTimeout(() => {
+      setRobotVariant(nextVariant);
+      setRobotLeaving(false);
+      switchTimer.current = null;
+    }, 650);
+  };
+
+  useEffect(() => () => window.clearTimeout(switchTimer.current), []);
+
+  useEffect(() => {
+    if (!('IntersectionObserver' in window)) return undefined;
+    const shell = document.querySelector('.studio-shell');
+    const items = shell?.querySelectorAll('.studio-reveal');
+    if (!shell || !items?.length) return undefined;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    items.forEach((item) => observer.observe(item));
+    shell.classList.add('studio-motion-ready');
+    return () => { observer.disconnect(); shell.classList.remove('studio-motion-ready'); };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -141,14 +177,14 @@ const App = () => {
           </div>
         </div>
       </section>
-        <div className="studio-robot">
+        <div className={`studio-robot ${robotLeaving ? 'studio-robot--leaving' : ''}`}>
           <div className="studio-robot__stage">
             <Suspense fallback={null}><RobotGuide key={robotVariant} variant={robotVariant} /></Suspense>
           </div>
           <div className="studio-robot__controls" aria-label="Robotermodell auswählen">
-            <button type="button" aria-pressed={robotVariant === 'dr02'} onClick={() => setRobotVariant('dr02')}>DR02-pro</button>
+            <button type="button" aria-pressed={robotVariant === 'dr02'} disabled={robotLeaving} onClick={() => selectRobot('dr02')}>DR02-pro</button>
             <span aria-hidden="true">/</span>
-            <button type="button" aria-pressed={robotVariant === 'g1'} onClick={() => setRobotVariant('g1')}>Unitree G1</button>
+            <button type="button" aria-pressed={robotVariant === 'g1'} disabled={robotLeaving} onClick={() => selectRobot('g1')}>Unitree G1</button>
           </div>
           <p className="studio-robot__credit"><a href={robotVariant === 'dr02' ? '/models/dr02-pro/ATTRIBUTION.txt' : '/models/unitree-g1/ATTRIBUTION.txt'}>3D-Modell &amp; Lizenz</a></p>
         </div>
@@ -183,7 +219,7 @@ const App = () => {
             {capabilitiesData.map((cap, i) => {
               const IconComponent = capabilityIcons[cap.icon];
               return (
-                <div key={i} className="studio-glass p-6 sm:p-10 rounded-2xl sm:rounded-[3rem] transition-all group">
+                <div key={i} className="studio-glass studio-reveal p-6 sm:p-10 rounded-2xl sm:rounded-[3rem] transition-all group" style={{ '--reveal-delay': `${i * 100}ms` }}>
                   <div className="w-14 h-14 rounded-2xl bg-cyan-400/10 flex items-center justify-center mb-8 group-hover:bg-cyan-400 group-hover:text-black transition-all">
                     {IconComponent && <IconComponent className="text-cyan-400" />}
                   </div>
@@ -262,52 +298,26 @@ const App = () => {
             </div>
           </div>
 
-          <div className="space-y-16 md:space-y-48">
+          <div className="studio-experience-list">
             {caseStudiesData.map((caseStudy, idx) => (
-              <div key={caseStudy.case_id} className={`grid lg:grid-cols-12 gap-8 lg:gap-16 items-center ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
-                <div className="lg:col-span-7">
-                  <div className="group relative overflow-hidden rounded-2xl md:rounded-[4rem] border border-white/10 bg-slate-900 shadow-2xl aspect-video">
-                    <div className="absolute inset-0 bg-[#0a0a0a] flex items-center justify-center">
-                      <div className="text-center opacity-10 group-hover:opacity-20 transition-opacity">
-                        <Box size={160} className="mx-auto mb-4" />
-                        <p className="text-[10px] font-mono tracking-[0.5em] uppercase">Projektübersicht</p>
-                      </div>
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-transparent to-transparent"></div>
-
-                    <div className="absolute top-4 right-4 sm:top-10 sm:right-10 flex flex-col items-end gap-2">
-                      <div className="flex items-center gap-2 px-5 py-2 bg-black/60 backdrop-blur-md border border-white/20 rounded-full text-[10px] font-black uppercase tracking-widest text-cyan-400 shadow-xl">
-                        {caseStudy.case_id === 'ai-rust' ? <Bot size={12} /> : caseStudy.case_id === 'vw-streaming' ? <UserCheck size={12} /> : <Award size={12} />}
-                        {caseStudy.case_id === 'ai-rust' ? 'In Entwicklung' : 'Persönliche Erfahrung'}
-                      </div>
-                    </div>
-
-                    <div className="absolute bottom-4 left-4 right-4 sm:bottom-12 sm:left-12 sm:right-12 flex flex-wrap gap-4 sm:gap-12">
-                      {caseStudy.stats.map((stat, i) => (
-                        <div key={i} className="flex flex-col border-l border-white/20 pl-4">
-                          <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest mb-1">Projektinfo</span>
-                          <span className="text-xl font-black italic uppercase tracking-tighter">{stat}</span>
-                        </div>
-                      ))}
-                    </div>
+              <article key={caseStudy.case_id} className="studio-experience studio-reveal">
+                <div className="studio-experience__heading">
+                  <span className="studio-experience__number" aria-hidden="true">{String(idx + 1).padStart(2, '0')}</span>
+                  <div>
+                    <p className="text-xs font-mono text-cyan-400 mb-4 tracking-widest uppercase italic">{caseStudy.brand}</p>
+                    <h4 className="text-3xl md:text-5xl font-black uppercase tracking-tight italic leading-none">{caseStudy.title}</h4>
                   </div>
                 </div>
-
-                <div className="lg:col-span-5">
-                  <h4 className="text-sm font-mono text-cyan-400 mb-4 tracking-widest uppercase italic">{caseStudy.brand}</h4>
-                  <h5 className="text-4xl md:text-5xl font-black mb-8 uppercase tracking-tight italic leading-none">{caseStudy.title}</h5>
-                  <p className="text-slate-400 text-xl leading-relaxed mb-10 font-light border-l-4 border-cyan-500/20 pl-8 italic">
-                    {caseStudy.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-3 mb-10">
+                <div className="studio-experience__body">
+                  <p className="text-slate-400 text-lg md:text-xl leading-relaxed font-light italic">{caseStudy.description}</p>
+                  <div className="flex flex-wrap gap-2 mt-7">
                     {caseStudy.tags.map(tag => (
-                      <span key={tag} className="px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold text-slate-500 uppercase tracking-widest">{tag}</span>
+                      <span key={tag} className="px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold text-slate-400 uppercase tracking-widest">{tag}</span>
                     ))}
                   </div>
-
+                  <p className="studio-experience__meta">{caseStudy.stats.join(' · ')}</p>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>

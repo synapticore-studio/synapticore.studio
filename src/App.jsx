@@ -293,8 +293,10 @@ const App = () => {
               <h2 className="text-sm font-mono text-cyan-400 mb-4 tracking-[0.4em] uppercase italic">Erfahrung & Entwicklung</h2>
               <h3 className="text-4xl md:text-6xl font-black uppercase tracking-tighter italic leading-none">Arbeit, die <br />verbindet.</h3>
             </div>
-            <div className="max-w-md text-slate-400 text-base leading-relaxed">
-              Ich bin Björn Bethge, Founder &amp; Creative Technologist von synapticore.studio. Als technischer Berater und Entwickler habe ich IT, Forschung, Entwicklung und Design in VR/AR-Projekten und der virtuellen Absicherung zusammengebracht. Technische Details gehörten dabei zum Alltag – etwa Latenz und Performance, die für den Komfort in VR entscheidend sind. Heute verbinde ich diese Erfahrung mit Digital Twins, KI und interaktiven 3D-Anwendungen.
+            <div className="max-w-md space-y-4 text-slate-400 text-base leading-relaxed">
+              <p>Ich bin Björn Bethge, Founder &amp; Creative Technologist von synapticore.studio. Ich arbeite mich in technische Aufgaben ein und verbinde die Perspektiven von Forschung, Entwicklung und Design zu Werkzeugen und Anwendungen, die in bestehende Abläufe passen.</p>
+              <p>Mein Hintergrund liegt in virtueller Absicherung, VR/AR und interaktiver 3D-Technologie. Dabei gehörten technische Details wie Latenz und Performance zum Alltag. Heute nutze ich diese Erfahrung für DCC-Pipelines, synthetische Daten und interaktive Anwendungen rund um Digital Twins und KI.</p>
+              <a href="https://synapticore.io/#about" className="inline-flex text-cyan-400 hover:text-cyan-300 transition-colors">Mehr über meinen Hintergrund <span aria-hidden="true" className="ml-2">↗</span></a>
             </div>
           </div>
 

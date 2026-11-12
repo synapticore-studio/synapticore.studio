@@ -231,7 +231,7 @@ const App = () => {
               <h3 className="text-4xl md:text-[6rem] font-black uppercase tracking-tighter italic leading-none">Arbeit, die <br />verbindet.</h3>
             </div>
             <div className="max-w-md text-slate-400 text-base leading-relaxed">
-              Ich bin Björn Bethge, Founder &amp; Creative Technologist von synapticore.studio. Als technischer Berater und Entwickler habe ich in verschiedenen Projekten Menschen aus IT, Forschung, Entwicklung und Design zusammengebracht – von VR/AR und virtueller Absicherung bis zu interaktiven 3D-Anwendungen. Diese Erfahrung fließt heute in meine Arbeit mit Agenten und Echtzeit-3D ein.
+              Ich bin Björn Bethge, Founder &amp; Creative Technologist von synapticore.studio. Als technischer Berater und Entwickler habe ich in verschiedenen Projekten Menschen aus IT, Forschung, Entwicklung und Design zusammengebracht – von VR/AR und virtueller Absicherung bis zu interaktiven 3D-Anwendungen. Dabei habe ich ein Gespür dafür entwickelt, neue Technologien zu verstehen und passende Lösungen für unterschiedliche Anforderungen zu finden. Diese Erfahrung fließt heute in meine Arbeit mit Agenten und Echtzeit-3D ein.
             </div>
           </div>
 

@@ -148,7 +148,7 @@ const App = () => {
             <h2 className="text-sm font-mono text-cyan-400 mb-6 tracking-[0.5em] uppercase italic">Was ich anbiete</h2>
             <h3 className="text-4xl md:text-7xl font-black italic uppercase tracking-tighter leading-none mb-8">Von der Pipeline <br /><span className="text-cyan-400">zum Erlebnis.</span></h3>
             <p className="text-slate-400 text-xl font-light italic">
-              Für Teams, die ihre Werkzeuge erweitern, 3D-Arbeitsabläufe verbinden oder Ideen als interaktive Anwendungen umsetzen möchten.
+              Für Teams, die Agenten in ihre 3D-Werkzeuge und Pipelines integrieren und KI in interaktiven Echtzeit-Anwendungen erlebbar machen möchten.
             </p>
           </div>
 
@@ -186,7 +186,7 @@ const App = () => {
           <div className="grid md:grid-cols-3 gap-8 text-slate-400 leading-relaxed">
             <div><h3 className="text-xl font-bold text-white mb-3">Szenen & Varianten</h3><p>Prozedurale 3D-Szenen und Assets, deren Materialien, Beleuchtung oder Kameraperspektiven gezielt verändert werden können.</p></div>
             <div><h3 className="text-xl font-bold text-white mb-3">Synthetische Datensätze</h3><p>Gerenderte Bildvarianten und – passend zur Aufgabe – Annotationen und Metadaten für Training und Tests von Computer Vision.</p></div>
-            <div><h3 className="text-xl font-bold text-white mb-3">Interaktive Prototypen</h3><p>Echtzeit-Anwendungen, in denen Menschen 3D-Inhalte erkunden oder konfigurieren können – bei Bedarf mit KI-Funktionen.</p></div>
+            <div><h3 className="text-xl font-bold text-white mb-3">Interaktive Prototypen</h3><p>Echtzeit-Anwendungen, in denen Menschen 3D-Inhalte erkunden und mit KI-Funktionen interagieren können.</p></div>
           </div>
           <p className="mt-10 text-sm text-slate-400 max-w-3xl leading-relaxed">Synthetische Daten ergänzen reale Daten. Ob sie für einen Anwendungsfall geeignet sind, hängt unter anderem von Szenenvielfalt und Abgleich mit realen Daten ab.</p>
         </div>
@@ -199,7 +199,7 @@ const App = () => {
           <ol className="grid md:grid-cols-4 gap-6 text-slate-400 leading-relaxed">
             <li><strong className="block text-white mb-2">01 · Erzeugen</strong>Skripte und prozedurale Werkzeuge unterstützen die Asset-Erstellung in Blender.</li>
             <li><strong className="block text-white mb-2">02 · Übergeben</strong>Assets werden für die Weiterarbeit in der Engine vorbereitet und übertragen.</li>
-            <li><strong className="block text-white mb-2">03 · Weiterarbeiten</strong>Plugins und Werkzeuge unterstützen die Arbeit an Szenen und Leveln im Editor; Agenten kommen bei Bedarf hinzu.</li>
+            <li><strong className="block text-white mb-2">03 · Weiterarbeiten</strong>Plugins und Agenten unterstützen die Arbeit an Szenen und Leveln direkt im Editor.</li>
             <li><strong className="block text-white mb-2">04 · Prüfen</strong>Ergebnisse werden an den Projektkriterien gemessen; Ihr Team entscheidet über die Freigabe.</li>
           </ol>
         </div>
@@ -229,8 +229,8 @@ const App = () => {
               <h2 className="text-sm font-mono text-cyan-400 mb-4 tracking-[0.4em] uppercase italic">Erfahrung & Entwicklung</h2>
               <h3 className="text-4xl md:text-[6rem] font-black uppercase tracking-tighter italic leading-none">Arbeit, die <br />verbindet.</h3>
             </div>
-            <div className="max-w-xs text-slate-500 text-xs font-mono uppercase tracking-widest leading-relaxed">
-              Eigene Entwicklungen und persönliche Projekterfahrung aus Anstellungen und freiberuflicher Arbeit.
+            <div className="max-w-md text-slate-400 text-base leading-relaxed">
+              Ich bin Björn Bethge. Als technischer Berater und Entwickler habe ich in verschiedenen Projekten Menschen aus IT, Forschung, Entwicklung und Design zusammengebracht – von VR/AR und virtueller Absicherung bis zu interaktiven 3D-Anwendungen. Diese Erfahrung fließt heute in meine Arbeit mit Agenten und Echtzeit-3D ein.
             </div>
           </div>
 
@@ -292,7 +292,7 @@ const App = () => {
               Ihr Projekt. <br /><span className="text-cyan-400 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 font-black">Ihr Workflow.</span>
             </h2>
             <p className="text-slate-400 text-2xl md:text-3xl mb-16 font-light italic">
-              Sie benötigen ein Plugin, eine 3D-Pipeline oder eine interaktive Anwendung? Schreiben Sie mir, was entstehen soll und welche Werkzeuge Ihr Team nutzt.
+              Sie möchten Agenten in Ihre 3D-Pipeline integrieren oder ein interaktives KI-Erlebnis entwickeln? Schreiben Sie mir, was entstehen soll und welche Werkzeuge Ihr Team nutzt.
             </p>
             <div className="flex flex-col md:flex-row justify-center items-center gap-10">
               <a href={mailtoLink(EMAIL_DOMAIN)} className="group px-8 py-4 sm:px-16 sm:py-8 bg-white text-black font-black rounded-full hover:bg-cyan-400 transition-all text-lg sm:text-2xl shadow-2xl active:scale-95 flex items-center gap-4">
@@ -316,7 +316,7 @@ const App = () => {
             <div className="flex flex-wrap gap-4 sm:gap-8 opacity-20 grayscale items-center text-sm font-black italic tracking-tighter text-slate-400">
               <span>BLENDER 2.4 ORIGIN</span>
               <span>INDUSTRIEERFAHRUNG</span>
-              <span>ADIDAS / NVIDIA</span>
+              <span>PRODUKTVISUALISIERUNG</span>
               <span>VIRTUAL PRODUCTION</span>
               <span>AGENTIC DCC</span>
             </div>

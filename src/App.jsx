@@ -148,7 +148,7 @@ const App = () => {
             <h2 className="text-sm font-mono text-cyan-400 mb-6 tracking-[0.5em] uppercase italic">Was ich anbiete</h2>
             <h3 className="text-4xl md:text-7xl font-black italic uppercase tracking-tighter leading-none mb-8">Von der Pipeline <br /><span className="text-cyan-400">zum Erlebnis.</span></h3>
             <p className="text-slate-400 text-xl font-light italic">
-              Für Teams, die Agenten in ihre 3D-Werkzeuge und Pipelines integrieren und KI in interaktiven Echtzeit-Anwendungen erlebbar machen möchten.
+              Für Teams, die synthetische Daten erzeugen, wissenschaftliche Daten räumlich visualisieren und KI in ihre 3D-Werkzeuge und Echtzeit-Anwendungen integrieren möchten.
             </p>
           </div>
 
@@ -183,9 +183,10 @@ const App = () => {
         <div className="container mx-auto px-4 sm:px-6">
           <p className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-5">Von der Idee zum Ergebnis</p>
           <h2 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter mb-10">Was entstehen <span className="text-cyan-400">kann.</span></h2>
-          <div className="grid md:grid-cols-3 gap-8 text-slate-400 leading-relaxed">
+          <div className="grid md:grid-cols-2 gap-8 text-slate-400 leading-relaxed">
             <div><h3 className="text-xl font-bold text-white mb-3">Szenen & Varianten</h3><p>Prozedurale 3D-Szenen und Assets, deren Materialien, Beleuchtung oder Kameraperspektiven gezielt verändert werden können.</p></div>
             <div><h3 className="text-xl font-bold text-white mb-3">Synthetische Datensätze</h3><p>Gerenderte Bildvarianten und – passend zur Aufgabe – Annotationen und Metadaten für Training und Tests von Computer Vision.</p></div>
+            <div><h3 className="text-xl font-bold text-white mb-3">Wissenschaftliche Visualisierungen</h3><p>Räumliche Daten und Simulationsergebnisse als erkundbare 3D-Szenen und interaktive Ansichten.</p></div>
             <div><h3 className="text-xl font-bold text-white mb-3">Interaktive Prototypen</h3><p>Echtzeit-Anwendungen, in denen Menschen 3D-Inhalte erkunden und mit KI-Funktionen interagieren können.</p></div>
           </div>
           <p className="mt-10 text-sm text-slate-400 max-w-3xl leading-relaxed">Synthetische Daten ergänzen reale Daten. Ob sie für einen Anwendungsfall geeignet sind, hängt unter anderem von Szenenvielfalt und Abgleich mit realen Daten ab.</p>
@@ -292,7 +293,7 @@ const App = () => {
               Ihr Projekt. <br /><span className="text-cyan-400 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 font-black">Ihr Workflow.</span>
             </h2>
             <p className="text-slate-400 text-2xl md:text-3xl mb-16 font-light italic">
-              Sie möchten Agenten in Ihre 3D-Pipeline integrieren oder ein interaktives KI-Erlebnis entwickeln? Schreiben Sie mir, was entstehen soll und welche Werkzeuge Ihr Team nutzt.
+              Sie möchten synthetische Daten erzeugen, wissenschaftliche Daten visualisieren oder KI in Ihre 3D-Pipeline integrieren? Schreiben Sie mir, was entstehen soll und welche Werkzeuge Ihr Team nutzt.
             </p>
             <div className="flex flex-col md:flex-row justify-center items-center gap-10">
               <a href={mailtoLink(EMAIL_DOMAIN)} className="group px-8 py-4 sm:px-16 sm:py-8 bg-white text-black font-black rounded-full hover:bg-cyan-400 transition-all text-lg sm:text-2xl shadow-2xl active:scale-95 flex items-center gap-4">

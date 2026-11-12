@@ -1,0 +1,5 @@
+Model: DR02-pro, DEEP Robotics / DeepRoboticsLab
+Source: https://huggingface.co/datasets/deeproboticslab/simready-assets/tree/ebd156e765d5979ff2d8f280c905aa5c7dcb8e10/DR02-pro
+License: https://creativecommons.org/licenses/by/4.0/
+Changes: Imported from USD, reorganized physical links into a joint hierarchy, merged and reduced meshes per component while preserving the front shell, adjusted PBR material values, exported to GLB, and animated for the website.
+The original BSD 3-Clause source license is retained in SOURCE_LICENSE.txt. No endorsement is implied.

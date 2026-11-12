@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import {
   Cpu,
   Activity,
@@ -44,6 +44,7 @@ import {
 import { getEmail, mailtoLink } from './utils/email';
 
 const EMAIL_DOMAIN = 'synapticore.studio';
+const RobotGuide = lazy(() => import('./RobotGuide'));
 
 import heroData from '@content/hero.json';
 import capabilitiesData from '@content/capabilities.json';
@@ -54,6 +55,7 @@ const capabilityIcons = { Brain, Cloud, Wand2 };
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [robotVariant, setRobotVariant] = useState('dr02');
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -112,7 +114,7 @@ const App = () => {
         )}
       </nav>
 
-      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      <section className="studio-hero relative min-h-screen flex items-center pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">
           <div className="absolute top-0 left-0 w-full h-full" style={{ backgroundImage: 'radial-gradient(circle, #22d3ee 0.5px, transparent 0.5px)', backgroundSize: '50px 50px' }}></div>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1400px] h-[900px] bg-blue-600/5 rounded-full blur-[180px]"></div>
@@ -139,6 +141,18 @@ const App = () => {
           </div>
         </div>
       </section>
+        <div className="studio-robot">
+          <div className="studio-robot__stage">
+            <Suspense fallback={null}><RobotGuide key={robotVariant} variant={robotVariant} /></Suspense>
+          </div>
+          <div className="studio-robot__controls" aria-label="Robotermodell auswählen">
+            <button type="button" aria-pressed={robotVariant === 'dr02'} onClick={() => setRobotVariant('dr02')}>DR02-pro</button>
+            <span aria-hidden="true">/</span>
+            <button type="button" aria-pressed={robotVariant === 'g1'} onClick={() => setRobotVariant('g1')}>Unitree G1</button>
+          </div>
+          <p className="studio-robot__credit"><a href={robotVariant === 'dr02' ? '/models/dr02-pro/ATTRIBUTION.txt' : '/models/unitree-g1/ATTRIBUTION.txt'}>3D-Modell &amp; Lizenz</a></p>
+        </div>
+
 
       <section id="heritage" className="py-12 md:py-24 border-y border-white/5 bg-[#030303]">
         <div className="container mx-auto px-4 sm:px-6">

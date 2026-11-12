@@ -27,4 +27,29 @@
 @keyframes spatial-drift { from { transform: rotateX(65deg) rotateZ(-24deg) rotateY(-5deg); } to { transform: rotateX(55deg) rotateZ(15deg) rotateY(18deg); } }
 @media (max-width: 1023px) { .studio-spatial { width: 100vw; right: -32%; opacity: .3; } }
 @media (max-width: 640px) { .studio-spatial { width: 110vw; right: -45%; opacity: .23; } }
-@media (prefers-reduced-motion: reduce) { .studio-spatial__scene { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .studio-spatial__scene { animation: none; } .robot-guide .robot-guide__canvas { transition: none; } }
+
+/* Content remains in front of the robot while its fixed layer stays in the scene. */
+.studio-shell > section { position: relative; }
+.studio-shell > section > .container { position: relative; z-index: 2; }
+.studio-robot { position: fixed; z-index: 1; left: calc(clamp(145px, 12vw, 245px) - min(42vw, 640px) / 2); top: 50%; transform: translateY(-47%); width: min(42vw, 640px); text-align: center; }
+.studio-robot__stage { position: relative; height: min(86vh, 860px); min-height: 430px; isolation: isolate; }
+.studio-robot__stage::before { content: ''; position: absolute; z-index: -1; inset: 12% 2% 4%; border-radius: 50%; background: radial-gradient(ellipse, rgba(20, 148, 161, .12), rgba(20, 83, 104, .04) 38%, transparent 68%); filter: blur(22px); pointer-events: none; }
+.studio-robot__stage::after { content: ''; position: absolute; z-index: -1; left: 23%; right: 23%; bottom: 9%; height: 4%; border-radius: 50%; background: radial-gradient(ellipse, rgba(48, 210, 216, .22), rgba(17, 90, 96, .1) 40%, transparent 75%); filter: blur(6px); pointer-events: none; }
+.robot-guide, .robot-guide__canvas, .robot-guide__poster { display: block; width: 100%; height: 100%; }
+.robot-guide { position: relative; padding: 0; border: 0; background: transparent; cursor: pointer; }
+.robot-guide:focus-visible, .studio-robot__controls button:focus-visible, .studio-robot__credit a:focus-visible { outline: 2px solid #67e8f9; outline-offset: 4px; }
+.robot-guide__canvas, .robot-guide__poster { position: absolute; inset: 0; }
+.robot-guide__canvas { opacity: 0; transition: opacity .2s ease; }
+.robot-guide--ready .robot-guide__canvas { opacity: 1; }
+.robot-guide__canvas canvas { display: block; width: 100%; height: 100%; }
+.robot-guide__poster { object-fit: contain; transition: opacity .3s; }
+.robot-guide--ready .robot-guide__poster { opacity: 0; }
+.studio-robot__controls { display: flex; gap: .8rem; justify-content: center; color: #557078; font: 600 10px/1.5 ui-monospace, monospace; letter-spacing: .12em; text-transform: uppercase; }
+.studio-robot__controls button { color: #80989d; transition: color .2s; }
+.studio-robot__controls button:hover, .studio-robot__controls button[aria-pressed="true"] { color: #67e8f9; }
+.studio-robot__credit { margin-top: .4rem; color: #768489; font-size: 10px; }
+.studio-robot__credit a:hover { color: #a5f3fc; }
+@media (min-width: 1024px) { .studio-hero-content { max-width: 68%; } .studio-hero-content h1 { font-size: clamp(3.6rem, 6vw, 6.2rem); } }
+@media (max-width: 1023px) { .studio-hero { flex-direction: column; align-items: stretch; padding-top: 9rem; } .studio-robot { position: fixed; top: auto; bottom: 1rem; left: -60px; transform: none; width: 230px; margin: 0; } .studio-robot__stage { height: 235px; min-height: 0; } }
+@media (max-width: 480px) { .studio-robot { left: -66px; width: 210px; } .studio-robot__stage { height: 205px; } }

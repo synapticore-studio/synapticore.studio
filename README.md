@@ -23,6 +23,11 @@ Hero, Leistungen und Projekterfahrung werden im CMS gepflegt und mit `uv run cms
 
 Die persönliche Projekterfahrung orientiert sich an der Inhaltsvorlage und dem [öffentlichen Profil](https://www.xing.com/profile/Bjoern_Bethge3); sie wird als Erfahrung aus Anstellungen und Projekten über Partner dargestellt.
 
+
+## Interaktiver Roboter
+
+Der Hero lädt wahlweise den DR02-pro oder den Unitree G1 als komprimiertes GLB. Three.js beleuchtet die PBR-Materialien mit einer vorgefilterten Umgebung und farbigen Lichtern; AgX-Tonemapping und ein dezenter Bloom-Pass stimmen die Darstellung auf den Hintergrund ab; die Gelenke reagieren auf den Mauszeiger und ermöglichen eine kurze Begrüßung und eine dezente Ruhebewegung. Beim G1 bleibt der Kopf entsprechend dem Modell fest am Oberkörper; die Taillengelenke übernehmen die Blickrichtung. Auf großen Bildschirmen bleibt der Roboter beim Scrollen am linken Fensterrand sichtbar, auf kleinen als kompakte Figur. Bei `prefers-reduced-motion` bleibt die Szene statisch. Quellen, Lizenzbedingungen und Änderungen stehen in `public/models/*/ATTRIBUTION.txt` und den jeweiligen `SOURCE_LICENSE.txt`-Dateien.
+
 ## License
 
 [MIT Ethical Use](LICENSE)

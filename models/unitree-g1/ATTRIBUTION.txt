@@ -1,0 +1,4 @@
+Model: Unitree G1 with Inspire DFQ hands, Unitree Robotics
+Source: https://github.com/unitreerobotics/unitree_ros/tree/725b59b6de39a26c425632120c89f23c49a36f1e/robots/g1_description
+License: BSD 3-Clause; see SOURCE_LICENSE.txt.
+Changes: Imported URDF and meshes, assembled the joint hierarchy, assigned PBR materials, exported to GLB and animated for the website. No endorsement is implied.

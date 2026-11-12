@@ -146,9 +146,9 @@ const App = () => {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mb-12 md:mb-24">
             <h2 className="text-sm font-mono text-cyan-400 mb-6 tracking-[0.5em] uppercase italic">Was ich anbiete</h2>
-            <h3 className="text-4xl md:text-7xl font-black italic uppercase tracking-tighter leading-none mb-8">Werkzeuge für <br /><span className="text-cyan-400">Ihre Pipeline.</span></h3>
+            <h3 className="text-4xl md:text-7xl font-black italic uppercase tracking-tighter leading-none mb-8">Von der Pipeline <br /><span className="text-cyan-400">zum Erlebnis.</span></h3>
             <p className="text-slate-400 text-xl font-light italic">
-              Ich unterstütze Teams dabei, wiederholbare Schritte in 3D- und Echtzeit-Pipelines mit Skripten, Werkzeugen und Agenten zu verbinden. Gestaltung und Freigabe bleiben bei den Menschen im Projekt.
+              Für Teams, die 3D-Inhalte wiederholbar erzeugen, Daten für KI-Anwendungen gewinnen oder Ideen als interaktive Erlebnisse erproben möchten.
             </p>
           </div>
 
@@ -176,6 +176,19 @@ const App = () => {
               Open Source Repositories <ExternalLink size={12} />
             </a>
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-24 border-t border-white/5 bg-white/[0.02]">
+        <div className="container mx-auto px-4 sm:px-6">
+          <p className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-5">Von der Idee zum Ergebnis</p>
+          <h2 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter mb-10">Was entstehen <span className="text-cyan-400">kann.</span></h2>
+          <div className="grid md:grid-cols-3 gap-8 text-slate-400 leading-relaxed">
+            <div><h3 className="text-xl font-bold text-white mb-3">Szenen & Varianten</h3><p>Prozedurale 3D-Szenen und Assets, deren Materialien, Beleuchtung oder Kameraperspektiven gezielt verändert werden können.</p></div>
+            <div><h3 className="text-xl font-bold text-white mb-3">Synthetische Datensätze</h3><p>Gerenderte Bildvarianten und – passend zur Aufgabe – Annotationen und Metadaten für Training und Tests von Computer Vision.</p></div>
+            <div><h3 className="text-xl font-bold text-white mb-3">Interaktive Prototypen</h3><p>Echtzeit-Anwendungen, in denen Menschen mit 3D-Inhalten und KI-Funktionen interagieren können.</p></div>
+          </div>
+          <p className="mt-10 text-sm text-slate-400 max-w-3xl leading-relaxed">Synthetische Daten ergänzen reale Daten. Ob sie für einen Anwendungsfall geeignet sind, hängt unter anderem von Szenenvielfalt und Abgleich mit realen Daten ab.</p>
         </div>
       </section>
 
@@ -279,7 +292,7 @@ const App = () => {
               Ihr Projekt. <br /><span className="text-cyan-400 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 font-black">Ihr Workflow.</span>
             </h2>
             <p className="text-slate-400 text-2xl md:text-3xl mb-16 font-light italic">
-              Welche Schritte in Ihrer 3D-Pipeline möchten Sie vereinfachen? Schreiben Sie mir, mit welchen Werkzeugen Ihr Team arbeitet.
+              Sie benötigen eine 3D-Pipeline, synthetische Daten oder einen interaktiven KI-Prototyp? Schreiben Sie mir, was entstehen soll und welche Werkzeuge Ihr Team nutzt.
             </p>
             <div className="flex flex-col md:flex-row justify-center items-center gap-10">
               <a href={mailtoLink(EMAIL_DOMAIN)} className="group px-8 py-4 sm:px-16 sm:py-8 bg-white text-black font-black rounded-full hover:bg-cyan-400 transition-all text-lg sm:text-2xl shadow-2xl active:scale-95 flex items-center gap-4">

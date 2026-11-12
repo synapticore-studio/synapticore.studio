@@ -110,7 +110,7 @@ const App = () => {
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-cyan-400 text-[10px] font-bold tracking-[0.3em] uppercase mb-8">
               <CircuitBoard size={14} className="text-cyan-400 animate-pulse" /> {heroData.features[0]}
             </div>
-            <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-[11rem] font-black leading-[0.8] mb-10 tracking-tighter italic uppercase">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[6.5rem] font-black leading-[0.95] mb-10 tracking-tighter italic uppercase">
               {heroData.title.split('\n')[0]} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-400 to-blue-800">{heroData.title.split('\n')[1]}</span>
             </h1>
@@ -152,7 +152,7 @@ const App = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {capabilitiesData.map((cap, i) => {
               const IconComponent = capabilityIcons[cap.icon];
               return (
